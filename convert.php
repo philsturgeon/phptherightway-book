@@ -1,8 +1,8 @@
 <?php
 
 $dirName = './web/_posts';
-$outputDirName = '/Users/phil/Dropbox/phptherightway/manuscript';
-// $outputDirName = './output';
+// $outputDirName = '/Users/phil/Dropbox/phptherightway/manuscript';
+$outputDirName = './output';
 
 $dir = new DirectoryIterator($dirName);
 
