@@ -10,7 +10,7 @@ $contentArray = [];
 
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->getExtension() == 'md') {
-        continue;
+        continue;   
     }
 
     // Split the 00-00-00-Some-Content.md name into useful info
@@ -31,7 +31,7 @@ foreach ($dir as $fileinfo) {
     $subSectionContent = file_get_contents($dirName.'/'.$fileinfo->getFilename());
 
     // Strip the header out if there is one
-    preg_match('/^---[\s\S]*---?/', $subSectionContent, $subSectionMatches);
+    preg_match('/^---[\s\S]*?---/', $subSectionContent, $subSectionMatches);
     if (isset($subSectionMatches[0])) {
         $subSectionContent = str_replace($subSectionMatches[0], '', $subSectionContent);
     }
