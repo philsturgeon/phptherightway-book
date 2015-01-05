@@ -9,5 +9,6 @@ It will be overriden next time the convert function is run.
 
 ```
 $ git clone --recursive https://github.com/philsturgeon/phptherightway-book.git
+$ cd phptherightway-book
 $ php convert.php 
 ```
