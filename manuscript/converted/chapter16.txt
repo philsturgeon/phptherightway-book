@@ -1,0 +1,166 @@
+
+
+# Resources {#resources_title}
+
+
+## From the Source {#from_the_source_title}
+
+* [PHP Website](http://php.net/)
+* [PHP Documentation](http://php.net/docs.php)
+
+
+## People to Follow {#people_to_follow_title}
+
+* [Rasmus Lerdorf](http://twitter.com/rasmus)
+* [Fabien Potencier](http://twitter.com/fabpot)
+* [Derick Rethans](http://twitter.com/derickr)
+* [Chris Shiflett](http://twitter.com/shiflett)
+* [Sebastian Bergmann](http://twitter.com/s_bergmann)
+* [Matthew Weier O'Phinney](http://twitter.com/mwop)
+* [Pádraic Brady](http://twitter.com/padraicb)
+* [Anthony Ferrara](http://twitter.com/ircmaxell)
+* [Nikita Popov](http://twitter.com/nikita_ppv)
+
+
+## Mentoring {#mentoring_title}
+
+* [phpmentoring.org](http://phpmentoring.org/) - Formal, peer to peer mentoring in the PHP community.
+
+
+## PHP PaaS Providers {#php_paas_providers_title}
+
+* [PagodaBox](https://pagodabox.com/)
+* [AppFog](https://appfog.com/)
+* [Heroku](https://devcenter.heroku.com/categories/php)
+* [fortrabbit](http://fortrabbit.com/)
+* [Engine Yard Cloud](https://www.engineyard.com/products/cloud)
+* [Red Hat OpenShift Platform](http://openshift.com)
+* [dotCloud](http://docs.dotcloud.com/services/php/)
+* [AWS Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/)
+* [cloudControl](https://www.cloudcontrol.com/)
+* [Windows Azure](http://www.windowsazure.com/)
+* [Google App Engine](https://developers.google.com/appengine/docs/php/gettingstarted/)
+* [Jelastic](http://jelastic.com/)
+
+
+## Frameworks {#frameworks_title}
+
+Rather than re-invent the wheel, many PHP developers use frameworks to build out web applications. Frameworks abstract
+away many of the low-level concerns and provide helpful, easy-to-use interfaces to complete common tasks.
+
+You do not need to use a framework for every project. Sometimes plain PHP is the right way to go, but if you do need a
+framework then there are three main types available:
+
+* Micro Frameworks
+* Full-Stack Frameworks
+* Component Frameworks
+
+Micro-frameworks are essentially a wrapper to route a HTTP request to a callback, controller, method, etc as quickly as
+possible, and sometimes come with a few extra libraries to assist development such as basic database wrappers and the
+like. They are prominently used to build remote HTTP services.
+
+Many frameworks add a considerable number of features on top of what is available in a micro-framework and these are
+known Full-Stack Frameworks. These often come bundled with ORMs, Authentication packages, etc.
+
+Component-based frameworks are collections of specialized and single-purpose libraries. Disparate component-based
+frameworks can be used together to make a micro- or full-stack framework.
+
+* [Popular PHP Frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
+
+## Components {#components_title}
+
+As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing
+shared code. Various component repositories exist, the main two of which are:
+
+* [Packagist]
+* [PEAR]
+
+Both of these repositories have command line tools associated with them to help the installation and upgrade processes,
+and have been explained in more detail in the [Dependency Management] section.
+
+There are also component-based frameworks and component-vendors that offer no framework at all. These projects provide
+another source of packages which ideally have little to no dependencies on other packages, or specific frameworks.
+
+For example, you can use the [FuelPHP Validation package], without needing to use the FuelPHP framework itself.
+
+* [Aura]
+* [FuelPHP]
+* [Hoa Project]
+* [Orno]
+* [Symfony Components]
+* [The League of Extraordinary Packages]
+* Laravel's Illuminate Components
+    * [Eloquent ORM]
+    * [Queue]
+
+_Laravel's [Illuminate components] will become better decoupled from the Laravel framework. For now, only the
+components best decoupled from the Laravel framework are listed above._
+
+
+[Packagist]: /#composer_and_packagist
+[PEAR]: /#pear
+[Dependency Management]: /#dependency_management
+[FuelPHP Validation package]: https://github.com/fuelphp/validation
+[Aura]: http://auraphp.com/packages/v2
+[FuelPHP]: https://github.com/fuelphp
+[Hoa Project]: https://github.com/hoaproject
+[Orno]: https://github.com/orno
+[Symfony Components]: http://symfony.com/doc/current/components/index.html
+[The League of Extraordinary Packages]: http://thephpleague.com/
+[Eloquent ORM]: https://github.com/illuminate/database
+[Queue]: https://github.com/illuminate/queue
+[Illuminate components]: https://github.com/illuminate
+
+
+## Other Useful Resources {#other_resources_title}
+
+### Cheatsheets
+
+* [PHP Cheatsheets](http://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various
+PHP versions
+* [PHP Security Cheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
+
+### More best practices
+
+* [PHP Best Practices](https://phpbestpractices.org/)
+* [Best practices for Modern PHP Development](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
+
+### PHP universe
+
+* [PHP Developer blog](http://blog.phpdeveloper.org/)
+
+
+## Video Tutorials {#videos_title}
+
+### Paid Videos
+
+* [Standards and Best practices](http://teamtreehouse.com/library/standards-and-best-practices)
+* [PHP Training on Pluralsight](http://www.pluralsight.com/search/?searchTerm=php)
+
+
+## Books {#books_title}
+
+There are a lot of books around for PHP but some are sadly now quite old and no longer contain accurate information.
+There are even books published for "PHP 6" which does not exist, and will not now ever exist. The next major version of
+PHP will be named "PHP 7" because of those books.
+
+This section aims to be a living document for recommended books on PHP development in general. If you would like your
+book to be added, send a PR and it will be reviewed for relevancy.
+
+### Free Books
+
+* [PHP The Right Way](https://leanpub.com/phptherightway/) - This website is available as a book completely for free.
+
+### Paid Books
+
+* [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - Get your code under control in a series of
+small, specific steps
+* [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - Learn the security basics that a senior
+developer usually acquires over years of experience, all condensed down into one quick and easy handbook
+* [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - Learning
+to write testable doesn't have to suck
+* [Securing PHP: Core Concepts](https://leanpub.com/securingphp-coreconcepts) - A guide to some of the most common
+security terms and provides some examples of them in every day PHP
+* [Scaling PHP]( https://leanpub.com/scalingphp) - Stop playing sysadmin and get back to coding
+* [Signaling PHP]( https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
+run from the command line.

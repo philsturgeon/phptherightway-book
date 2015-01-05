@@ -1,8 +1,7 @@
 <?php
 
 $dirName = './web/_posts';
-// $outputDirName = '/Users/phil/Dropbox/phptherightway/manuscript';
-$outputDirName = './output';
+$outputDirName = './manuscript';
 
 $dir = new DirectoryIterator($dirName);
 
@@ -10,7 +9,7 @@ $contentArray = [];
 
 foreach ($dir as $fileinfo) {
     if (!$fileinfo->getExtension() == 'md') {
-        continue;   
+        continue;
     }
 
     // Split the 00-00-00-Some-Content.md name into useful info
@@ -55,7 +54,7 @@ $bookTxtContent = "";
 // Now output all that info to new markdown files
 foreach ($contentArray as $chapterNum => $chapterContent) {
     file_put_contents("{$outputDirName}/converted/chapter{$chapterNum}.txt", $chapterContent);
-    
+
     $bookTxtContent .= "converted/chapter{$chapterNum}.txt\n";
 }
 

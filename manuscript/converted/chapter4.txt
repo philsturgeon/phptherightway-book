@@ -1,0 +1,257 @@
+
+
+# Dependency Management {#dependency_management_title}
+
+There are a ton of PHP libraries, frameworks, and components to choose from. Your project will likely use 
+several of them — these are project dependencies. Until recently, PHP did not have a good way to manage
+these project dependencies. Even if you managed them manually, you still had to worry about autoloaders.
+That is no longer an issue.
+
+Currently there are two major package management systems for PHP - [Composer] and [PEAR]. Composer is
+the main package manager to use for PHP, however for a long time PEAR used to fill that role. Knowing what
+PEAR is will be a good idea as you may still find references to it, even if you never use it.
+
+[Composer]: /#composer_and_packagist
+[PEAR]: /#pear
+
+## Composer and Packagist {#composer_and_packagist_title}
+
+Composer is a **brilliant** dependency manager for PHP. List your project's dependencies in a `composer.json` file and,
+with a few simple commands, Composer will automatically download your project's dependencies and setup autoloading for
+you.
+
+There are already a lot of PHP libraries that are compatible with Composer, ready to be used in your project. These
+"packages" are listed on [Packagist], the official repository for Composer-compatible PHP libraries.
+
+### How to Install Composer
+
+You can install Composer locally (in your current working directory; though this is no longer recommended) or globally
+(e.g. /usr/local/bin). Let's assume you want to install Composer locally. From your project's root directory:
+
+
+{lang="console"}
+~~~~~~~~
+curl -s https://getcomposer.org/installer | php
+~~~~~~~~
+
+This will download `composer.phar` (a PHP binary archive). You can run this with `php` to manage your project
+dependencies.
+<strong>Please Note:</strong> If you pipe downloaded code directly into an interpreter, please read the
+code online first to confirm it is safe.
+
+#### Installing on Windows
+
+For Windows users the easiest way to get up and running is to use the [ComposerSetup] installer, which
+performs a global install and sets up your `$PATH` so that you can just call `composer` from any
+directory in your command line.
+
+### How to Install Composer (manually)
+
+Manually installing Composer is an advanced technique; however, there are various reasons why a 
+developer might prefer this method vs. using the interactive installation routine. The interactive
+installation checks your PHP installation to ensure that:
+
+- a sufficient version of PHP is being used
+- `.phar` files can be executed correctly
+- certain directory permissions are sufficient
+- certain problematic extensions are not loaded
+- certain `php.ini` settings are set
+
+Since a manual installation performs none of these checks, you have to decide whether the trade-off is 
+worth it for you. As such, below is how to obtain Composer manually:
+
+
+{lang="console"}
+~~~~~~~~
+curl -s https://getcomposer.org/composer.phar -o $HOME/local/bin/composer
+chmod +x $HOME/local/bin/composer
+~~~~~~~~
+
+The path `$HOME/local/bin` (or a directory of your choice) should be in your `$PATH` environment 
+variable. This will result in a `composer` command being available.
+
+When you come across documentation that states to run Composer as `php composer.phar install`, you can
+substitute that with:
+
+
+{lang="console"}
+~~~~~~~~
+composer install
+~~~~~~~~
+
+This section will assume you have installed composer globally.
+
+### How to Define and Install Dependencies
+
+Composer keeps track of your project's dependencies in a file called `composer.json`. You can manage it
+by hand if you like, or use Composer itself. The `composer require` command adds a project dependency 
+and if you don't have a `composer.json` file, one will be created. Here's an example that adds [Twig]
+as a dependency of your project.
+
+
+{lang="console"}
+~~~~~~~~
+composer require twig/twig:~1.8
+~~~~~~~~
+
+Alternatively the `composer init` command will guide you through creating a full `composer.json` file
+for your project. Either way, once you've created your `composer.json` file you can tell Composer to
+download and install your dependencies into the `vendor/` directory. This also applies to projects 
+you've downloaded that already provide a `composer.json` file:
+
+
+{lang="console"}
+~~~~~~~~
+composer install
+~~~~~~~~
+
+Next, add this line to your application's primary PHP file; this will tell PHP to use Composer's 
+autoloader for your project dependencies.
+
+
+{lang="php"}
+~~~~~~~~
+<?php
+require 'vendor/autoload.php';
+~~~~~~~~
+
+Now you can use your project dependencies, and they'll be autoloaded on demand.
+
+### Updating your dependencies
+
+Composer creates a file called `composer.lock` which stores the exact version of each package it
+downloaded when you
+first ran `composer install`. If you share your project with other coders and the `composer.lock` file
+is part of your distribution, when they run `composer install` they'll get the same versions as you. 
+To update your dependencies, run `composer update`.
+
+This is most useful when you define your version requirements flexibly. For instance a version 
+requirement of `~1.8` means "anything newer than `1.8.0`, but less than `2.0.x-dev`". You can also use 
+the `*` wildcard as in `1.8.*`. Now Composer's `composer update` command will upgrade all your
+dependencies to the newest version that fits the restrictions you define.
+
+### Update Notifications
+
+To receive notifications about new version releases you can sign up for [VersionEye], a web service
+that can monitor your GitHub and BitBucket accounts for `composer.json` files and send emails with new
+package releases.
+
+### Checking your dependencies for security issues
+
+The [Security Advisories Checker] is a web service and a command-line tool, both will examine your `composer.lock`
+file and tell you if you need to update any of your dependencies.
+
+### Handling global dependencies with Composer
+
+Composer can also handle global dependencies and their binaries. Usage is straight-forward, all you need
+to do is prefix your command with `global`. If per example you wanted to install PHPUnit and have it 
+available globally, you'd run the following command:
+
+
+{lang="console"}
+~~~~~~~~
+composer global require phpunit/phpunit
+~~~~~~~~
+
+This will create a `~/.composer` folder where your global dependencies reside. To have the installed
+packages' binaries available everywhere, you'd then add the `~/.composer/vendor/bin` folder to your 
+`$PATH` variable.
+
+* [Learn about Composer]
+
+[Packagist]: http://packagist.org/
+[Twig]: http://twig.sensiolabs.org
+[VersionEye]: https://www.versioneye.com/
+[Security Advisories Checker]: https://security.sensiolabs.org/
+[Learn about Composer]: http://getcomposer.org/doc/00-intro.md
+[ComposerSetup]: https://getcomposer.org/Composer-Setup.exe
+
+
+## PEAR {#pear_title}
+
+A veteran package manager that some PHP developers enjoy is [PEAR][1]. It behaves similarly to Composer,
+but has some notable differences.
+
+PEAR requires each package to have a specific structure, which means that the author of the package must prepare it for
+usage with PEAR. Using a project which was not prepared to work with PEAR is not possible.
+
+PEAR installs packages globally, which means after installing them once they are available to all projects on that
+server. This can be good if many projects rely on the same package with the same version but might lead to problems if
+version conflicts between two projects arise.
+
+### How to install PEAR
+
+You can install PEAR by downloading the `.phar` installer and executing it. The PEAR documentation has 
+detailed [install instructions][2] for every operating system.
+
+If you are using Linux, you can also have a look at your distribution package manager. Debian and Ubuntu, 
+for example, have an apt `php-pear` package.
+
+### How to install a package
+
+If the package is listed on the [PEAR packages list][3], you can install it by specifying the official name:
+
+
+{lang="console"}
+~~~~~~~~
+pear install foo
+~~~~~~~~
+
+If the package is hosted on another channel, you need to `discover` the channel first and also specify it when
+installing. See the [Using channel docs][4] for more information on this topic.
+
+* [Learn about PEAR][1]
+
+### Handling PEAR dependencies with Composer
+
+If you are already using [Composer][5] and you would like to install some PEAR code too, you can use Composer to
+handle your PEAR dependencies. This example will install code from `pear2.php.net`:
+
+
+{lang="json"}
+~~~~~~~~
+{
+    "repositories": [
+        {
+            "type": "pear",
+            "url": "http://pear2.php.net"
+        }
+    ],
+    "require": {
+        "pear-pear2/PEAR2_Text_Markdown": "*",
+        "pear-pear2/PEAR2_HTTP_Request": "*"
+    }
+}
+~~~~~~~~
+
+The first section `"repositories"` will be used to let Composer know it should "initialize" (or "discover" in PEAR
+terminology) the pear repo. Then the require section will prefix the package name like this:
+
+> pear-channel/Package
+
+The "pear" prefix is hardcoded to avoid any conflicts, as a pear channel could be the same as another packages vendor
+name for example, then the channel short name (or full URL) can be used to reference which channel the package is in.
+
+When this code is installed it will be available in your vendor directory and automatically available through the
+Composer autoloader:
+
+> vendor/pear-pear2.php.net/PEAR2_HTTP_Request/pear2/HTTP/Request.php
+
+To use this PEAR package simply reference it like so:
+
+
+{lang="php"}
+~~~~~~~~
+<?php
+$request = new pear2\HTTP\Request();
+~~~~~~~~
+
+* [Learn more about using PEAR with Composer][6]
+
+
+[1]: http://pear.php.net/
+[2]: http://pear.php.net/manual/en/installation.getting.php
+[3]: http://pear.php.net/packages.php
+[4]: http://pear.php.net/manual/en/guide.users.commandline.channels.php
+[5]: /#composer_and_packagist
+[6]: http://getcomposer.org/doc/05-repositories.md#pear

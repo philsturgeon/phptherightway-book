@@ -1,0 +1,193 @@
+
+
+# Templating {#templating_title}
+
+Templates provide a convenient way of separating your controller and domain logic from your presentation logic.
+Templates typically contain the HTML of your application, but may also be used for other formats, such as XML.
+Templates are often referred to as "views", which make up **part of** the second component of the
+[model–view–controller](http://phptherightway.com/pages/Design-Patterns.html#model-view-controller) (MVC) software architecture pattern.
+
+## Benefits {#templating_benefits_title}
+
+The main benefit to using templates is the clear separation they create between the presentation logic and the rest of
+your application. Templates have the sole responsibility of displaying formatted content. They are not responsible for
+data lookup, persistence or other more complex tasks. This leads to cleaner, more readable code which is especially
+helpful in a team environment where developers work on the server-side code (controllers, models) and designers work on
+the client-side code (markup).
+
+Templates also improve the organization of presentation code. Templates are typically placed in a "views" folder, each
+defined within a single file. This approach encourages code reuse where larger blocks of code are broken into smaller,
+reusable pieces, often called partials. For example, your site header and footer can each be defined as templates,
+which are then included before and after each page template.
+
+Finally, depending on the library you use, templates can offer more security by automatically escaping user-generated
+content. Some libraries even offer sand-boxing, where template designers are only given access to white-listed
+variables and functions.
+
+## Plain PHP Templates {#plain_php_templates_title}
+
+Plain PHP templates are simply templates that use native PHP code. They are a natural choice since PHP is actually a
+template language itself. That simply means that you can combine PHP code within other code, like HTML. This is
+beneficial to PHP developers as there is no new syntax to learn, they know the functions available to them, and their
+code editors already have PHP syntax highlighting and auto-completion built-in. Further, plain PHP templates tend to be
+very fast as no compiling stage is required.
+
+Every modern PHP framework employs some kind of template system, most of which use plain PHP by default. Outside of
+frameworks, libraries like [Plates][plates] or [Aura.View][aura] make working with plain PHP templates easier by
+offering modern template functionality such as inheritance, layouts and extensions.
+
+### Simple example of a plain PHP template
+
+Using the [Plates][plates] library.
+
+
+{lang="php"}
+~~~~~~~~
+<?php // user_profile.php ?>
+
+<?php $this->insert('header', ['title' => 'User Profile']) ?>
+
+<h1>User Profile</h1>
+<p>Hello, <?=$this->escape($name)?></p>
+
+<?php $this->insert('footer') ?>
+~~~~~~~~
+
+### Example of plain PHP templates using inheritance
+
+Using the [Plates][plates] library.
+
+
+{lang="php"}
+~~~~~~~~
+<?php // template.php ?>
+
+<html>
+<head>
+    <title><?=$title?></title>
+</head>
+<body>
+
+<main>
+    <?=$this->section('content')?>
+</main>
+
+</body>
+</html>
+~~~~~~~~
+
+
+{lang="php"}
+~~~~~~~~
+<?php // user_profile.php ?>
+
+<?php $this->layout('template', ['title' => 'User Profile']) ?>
+
+<h1>User Profile</h1>
+<p>Hello, <?=$this->escape($name)?></p>
+~~~~~~~~
+
+
+[plates]: http://platesphp.com/
+[aura]: https://github.com/auraphp/Aura.View
+
+
+## Compiled Templates {#compiled_templates_title}
+
+While PHP has evolved into a mature, object oriented language, it [hasn't improved much][article_templating_engines] as
+a templating language. Compiled templates, like [Twig] or [Smarty]*, fill this void by offering a new syntax that has
+been geared specifically to templating. From automatic escaping, to inheritance and simplified control structures,
+compiled templates are designed to be easier to write, cleaner to read and safer to use. Compiled templates can even be
+shared across different languages, [Mustache] being a good example of this. Since these templates must be compiled
+there is a slight performance hit, however this is very minimal when proper caching is used.
+
+**While Smarty offers automatic escaping, this feature is NOT enabled by default.*
+
+### Simple example of a compiled template
+
+Using the [Twig] library.
+
+
+{lang="html+jinja"}
+~~~~~~~~
+{% raw %}
+{% include 'header.html' with {'title': 'User Profile'} %}
+
+<h1>User Profile</h1>
+<p>Hello, {{ name }}</p>
+
+{% include 'footer.html' %}
+{% endraw %}
+~~~~~~~~
+
+### Example of compiled templates using inheritance
+
+Using the [Twig] library.
+
+
+{lang="html+jinja"}
+~~~~~~~~
+{% raw %}
+// template.html
+
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+
+<main>
+    {% block content %}{% endblock %}
+</main>
+
+</body>
+</html>
+{% endraw %}
+~~~~~~~~
+
+
+{lang="html+jinja"}
+~~~~~~~~
+{% raw %}
+// user_profile.html
+
+{% extends "template.html" %}
+
+{% block title %}User Profile{% endblock %}
+{% block content %}
+    <h1>User Profile</h1>
+    <p>Hello, {{ name }}</p>
+{% endblock %}
+{% endraw %}
+~~~~~~~~
+
+
+[article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
+[Twig]: http://twig.sensiolabs.org/
+[Smarty]: http://www.smarty.net/
+[Mustache]: http://mustache.github.io/
+
+
+## Further Reading {#templating_further_reading_title}
+
+### Articles & Tutorials
+
+* [Templating Engines in PHP](http://fabien.potencier.org/article/34/templating-engines-in-php)
+* [An Introduction to Views & Templating in CodeIgniter](http://code.tutsplus.com/tutorials/an-introduction-to-views-templating-in-codeigniter--net-25648)
+* [Getting Started With PHP Templating](http://www.smashingmagazine.com/2011/10/17/getting-started-with-php-templating/)
+* [Roll Your Own Templating System in PHP](http://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
+* [Master Pages](https://laracasts.com/series/laravel-from-scratch/episodes/7)
+* [Working With Templates in Symfony 2](http://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
+
+### Libraries
+
+* [Aura.View](https://github.com/auraphp/Aura.View) *(native)*
+* [Blade](http://laravel.com/docs/templates) *(compiled, framework specific)*
+* [Dwoo](http://dwoo.org/) *(compiled)*
+* [Latte](https://github.com/nette/latte) *(compiled)*
+* [Mustache](https://github.com/bobthecow/mustache.php) *(compiled)*
+* [PHPTAL](http://phptal.org/) *(compiled)*
+* [Plates](http://platesphp.com/) *(native)*
+* [Smarty](http://www.smarty.net/) *(compiled)*
+* [Twig](http://twig.sensiolabs.org/) *(compiled)*
+* [Zend\View](http://framework.zend.com/manual/2.3/en/modules/zend.view.quick-start.html) *(native, framework specific)*

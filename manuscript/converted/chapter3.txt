@@ -1,0 +1,217 @@
+
+
+# Language Highlights {#language_highlights_title}
+
+
+## Programming Paradigms {#programming_paradigms_title}
+
+PHP is a flexible, dynamic language that supports a variety of programming techniques. It has evolved dramatically over
+the years, notably adding a solid object-oriented model in PHP 5.0 (2004), anonymous functions and namespaces in
+PHP 5.3 (2009), and traits in PHP 5.4 (2012).
+
+### Object-oriented Programming
+
+PHP has a very complete set of object-oriented programming features including support for classes, abstract classes,
+interfaces, inheritance, constructors, cloning, exceptions, and more.
+
+* [Read about Object-oriented PHP][oop]
+* [Read about Traits][traits]
+
+### Functional Programming
+
+PHP supports first-class function, meaning that a function can be assigned to a variable. Both user-defined and
+built-in functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to
+other functions (feature called Higher-order functions) and function can return other functions.
+
+Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code
+focus on iteration.
+
+New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
+
+PHP 5.4 added the ability to bind closures to an object's scope and also improved support for callables such that they
+can be used interchangeably with anonymous functions in almost all cases.
+
+* Continue reading on [Functional Programming in PHP](http://phptherightway.com/pages/Functional-Programming.html)
+* [Read about Anonymous Functions][anonymous-functions]
+* [Read about the Closure class][closure-class]
+* [More details in the Closures RFC][closures-rfc]
+* [Read about Callables][callables]
+* [Read about dynamically invoking functions with `call_user_func_array()`][call-user-func-array]
+
+### Meta Programming
+
+PHP supports various forms of meta-programming through mechanisms like the Reflection API and Magic Methods. There are
+many Magic Methods available like `__get()`, `__set()`, `__clone()`, `__toString()`, `__invoke()`, etc. that allow
+developers to hook into class behavior. Ruby developers often say that PHP is lacking `method_missing`, but it is
+available as `__call()` and `__callStatic()`.
+
+* [Read about Magic Methods][magic-methods]
+* [Read about Reflection][reflection]
+* [Read about Overloading][overloading]
+
+
+[oop]: http://php.net/language.oop5
+[traits]: http://php.net/language.oop5.traits
+[anonymous-functions]: http://php.net/functions.anonymous
+[closure-class]: http://php.net/class.closure
+[closures-rfc]: https://wiki.php.net/rfc/closures
+[callables]: http://php.net/language.types.callable
+[call-user-func-array]: http://php.net/function.call-user-func-array
+[magic-methods]: http://php.net/language.oop5.magic
+[reflection]: http://php.net/intro.reflection
+[overloading]: http://php.net/language.oop5.overloading
+
+
+
+## Namespaces {#namespaces_title}
+
+As mentioned above, the PHP community has a lot of developers creating lots of code. This means that one library's PHP
+code may use the same class name as another library. When both libraries are used in the same namespace, they collide
+and cause trouble.
+
+_Namespaces_ solve this problem. As described in the PHP reference manual, namespaces may be compared to operating
+system directories that _namespace_ files; two files with the same name may co-exist in separate directories. Likewise,
+two PHP classes with the same name may co-exist in separate PHP namespaces. It's as simple as that.
+
+It is important for you to namespace your code so that it may be used by other developers without fear of colliding
+with other libraries.
+
+One recommended way to use namespaces is outlined in [PSR-4][psr4], which aims to provide a standard file, class and
+namespace convention to allow plug-and-play code.
+
+In October 2014 the PHP-FIG deprecated the previous autoloading standard: [PSR-0][psr0], which has been replaced with
+[PSR-4][psr4]. Currently both are still usable, as PSR-4 requires PHP 5.3 and many PHP 5.2-only projects currently implement
+PSR-0. If you're going to use an autoloader standard for a new application or package then you almost certainly want
+to look into PSR-4.
+
+* [Read about Namespaces][namespaces]
+* [Read about PSR-0][psr0]
+* [Read about PSR-4][psr4]
+
+
+[namespaces]: http://php.net/language.namespaces
+[psr0]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-0.md
+[psr4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+
+
+## Standard PHP Library {#standard_php_library_title}
+
+The Standard PHP Library (SPL) is packaged with PHP and provides a collection of classes and interfaces. It is made up
+primarily of commonly needed datastructure classes (stack, queue, heap, and so on), and iterators which can traverse
+over these datastructures or your own classes which implement SPL interfaces.
+
+* [Read about the SPL][spl]
+
+
+[spl]: http://php.net/book.spl
+
+
+## Command Line Interface {#command_line_interface_title}
+
+PHP was created to write web applications, but is also useful for scripting command line interface (CLI) programs.
+Command line PHP programs can help automate common tasks like testing, deployment, and application administrivia.
+
+CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web
+GUI for it. Just be sure **not** to put your CLI PHP scripts in your public web root!
+
+Try running PHP from your command line:
+
+
+{lang="console"}
+~~~~~~~~
+> php -i
+~~~~~~~~
+
+The `-i` option will print your PHP configuration just like the [`phpinfo()`][phpinfo] function.
+
+The `-a` option provides an interactive shell, similar to ruby's IRB or python's interactive shell. There are a number
+of other useful [command line options][cli-options], too.
+
+Let's write a simple "Hello, $name" CLI program. To try it out, create a file named `hello.php`, as below.
+
+
+{lang="php"}
+~~~~~~~~
+<?php
+if ($argc != 2) {
+    echo "Usage: php hello.php [name].\n";
+    exit(1);
+}
+$name = $argv[1];
+echo "Hello, $name\n";
+~~~~~~~~
+
+PHP sets up two special variables based on the arguments your script is run with. [`$argc`][argc] is an integer
+variable containing the argument *count* and [`$argv`][argv] is an array variable containing each argument's *value*.
+The first argument is always the name of your PHP script file, in this case `hello.php`.
+
+The `exit()` expression is used with a non-zero number to let the shell know that the command failed. Commonly used
+exit codes can be found [here][exit-codes].
+
+To run our script, above, from the command line:
+
+
+{lang="console"}
+~~~~~~~~
+> php hello.php
+Usage: php hello.php [name]
+> php hello.php world
+Hello, world
+~~~~~~~~
+
+
+ * [Learn about running PHP from the command line][php-cli]
+ * [Learn about setting up Windows to run PHP from the command line][php-cli-windows]
+
+
+[phpinfo]: http://php.net/function.phpinfo
+[cli-options]: http://php.net/features.commandline.options
+[argc]: http://php.net/reserved.variables.argc
+[argv]: http://php.net/reserved.variables.argv
+[exit-codes]: http://www.gsp.com/cgi-bin/man.cgi?section=3&amp;topic=sysexits
+[php-cli]: http://php.net/features.commandline
+[php-cli-windows]: http://php.net/install.windows.commandline
+
+
+## Xdebug {#xdebug_title}
+
+One of the most useful tools in software development is a proper debugger. It allows you to trace the execution of your
+code and monitor the contents of the stack. Xdebug, PHP's debugger, can be utilized by various IDEs to provide
+Breakpoints and stack inspection. It can also allow tools like PHPUnit and KCacheGrind to perform code coverage
+analysis and code profiling.
+
+If you find yourself in a bind, willing to resort to `var_dump()`/`print_r()`, and you still can't find the solution -
+maybe you need to use the debugger.
+
+[Installing Xdebug][xdebug-install] can be tricky, but one of its most important features is "Remote Debugging" - if
+you develop code locally and then test it inside a VM or on another server, Remote Debugging is the feature that you
+will want to enable right away.
+
+Traditionally, you will modify your Apache VHost or .htaccess file with these values:
+
+
+{lang="ini"}
+~~~~~~~~
+php_value xdebug.remote_host=192.168.?.?
+php_value xdebug.remote_port=9000
+~~~~~~~~
+
+The "remote host" and "remote port" will correspond to your local computer and the port that you configure your IDE to
+listen on. Then it's just a matter of putting your IDE into "listen for connections" mode, and loading the URL:
+
+    http://your-website.example.com/index.php?XDEBUG_SESSION_START=1
+
+Your IDE will now intercept the current state as the script executes, allowing you to set breakpoints and probe the
+values in memory.
+
+Graphical debuggers make it very easy to step through code, inspect variables, and eval code against the live runtime.
+Many IDE's have built-in or plugin-based support for graphical debugging with Xdebug. MacGDBp is a free, open-source,
+stand-alone Xdebug GUI for Mac.
+
+ * [Learn more about Xdebug][xdebug-docs]
+ * [Learn more about MacGDBp][macgdbp-install]
+
+
+[xdebug-install]: http://xdebug.org/docs/install
+[xdebug-docs]: http://xdebug.org/docs/
+[macgdbp-install]: http://www.bluestatic.org/software/macgdbp/
