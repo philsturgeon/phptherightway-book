@@ -26,7 +26,7 @@ included.
 
 [phptherightway.com]: http://phptherightway.com
 [website repository]: https://github.com/codeguy/php-the-right-way
-[pull request to that repository]: https://github.com/codeguy/php-the-right-way/pulls/new
+[pull request to that repository]: https://github.com/codeguy/php-the-right-way/compare
 
 ## Licence
 
