@@ -5,7 +5,7 @@ This repository contains the conversion script to turn phptherightway.com conten
 ## Contribution
 
 Recursively clone this repository, as you will need the `web/` submodule. The `web/` folder is a clone of the 
-[phptherightway.com][http://phptherightway.com] website, and will be read by `convert.php`. It uses some really cheap
+[phptherightway.com](http://phptherightway.com) website, and will be read by `convert.php`. It uses some really cheap
 and crappy regex and string manipulation to convert Jekyll tags into LeanPub tags, then we just hope the Markdown
 doesn't have weird inconsistencies. 
 
