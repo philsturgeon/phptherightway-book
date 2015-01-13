@@ -17,15 +17,15 @@ Below is an example of how you might document a class with a few methods;
 /**
  * @author A Name <a.name@example.com>
  * @link http://www.phpdoc.org/docs/latest/index.html
+ * @package helper
  */
 class DateTimeHelper
 {
     /**
      * @param mixed $anything Anything that we can convert to a \DateTime object
      *
-     * @throws \InvalidArgumentException
-     *
      * @return \DateTime
+     * @throws \InvalidArgumentException
      */
     public function dateTimeFromAnything($anything)
     {
