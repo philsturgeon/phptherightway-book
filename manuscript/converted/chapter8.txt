@@ -95,7 +95,7 @@ Using the [Plates][plates] library.
 ## Compiled Templates {#compiled_templates_title}
 
 While PHP has evolved into a mature, object oriented language, it [hasn't improved much][article_templating_engines] as
-a templating language. Compiled templates, like [Twig] or [Smarty]*, fill this void by offering a new syntax that has
+a templating language. Compiled templates, like [Twig], [Brainy], or [Smarty]*, fill this void by offering a new syntax that has
 been geared specifically to templating. From automatic escaping, to inheritance and simplified control structures,
 compiled templates are designed to be easier to write, cleaner to read and safer to use. Compiled templates can even be
 shared across different languages, [Mustache] being a good example of this. Since these templates must be compiled
@@ -164,6 +164,7 @@ Using the [Twig] library.
 
 [article_templating_engines]: http://fabien.potencier.org/article/34/templating-engines-in-php
 [Twig]: http://twig.sensiolabs.org/
+[Brainy]: https://github.com/box/brainy
 [Smarty]: http://www.smarty.net/
 [Mustache]: http://mustache.github.io/
 
@@ -178,11 +179,13 @@ Using the [Twig] library.
 * [Roll Your Own Templating System in PHP](http://code.tutsplus.com/tutorials/roll-your-own-templating-system-in-php--net-16596)
 * [Master Pages](https://laracasts.com/series/laravel-from-scratch/episodes/7)
 * [Working With Templates in Symfony 2](http://code.tutsplus.com/tutorials/working-with-templates-in-symfony-2--cms-21172)
+* [Writing Safer Templates](https://github.com/box/brainy/wiki/Writing-Safe-Templates)
 
 ### Libraries
 
 * [Aura.View](https://github.com/auraphp/Aura.View) *(native)*
-* [Blade](http://laravel.com/docs/templates) *(compiled, framework specific)*
+* [Blade](http://laravel.com/docs/blade) *(compiled, framework specific)*
+* [Brainy](https://github.com/box/brainy) *(compiled)*
 * [Dwoo](http://dwoo.org/) *(compiled)*
 * [Latte](https://github.com/nette/latte) *(compiled)*
 * [Mustache](https://github.com/bobthecow/mustache.php) *(compiled)*

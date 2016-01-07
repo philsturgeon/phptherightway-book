@@ -19,12 +19,12 @@ interfaces, inheritance, constructors, cloning, exceptions, and more.
 
 ### Functional Programming
 
-PHP supports first-class function, meaning that a function can be assigned to a variable. Both user-defined and
+PHP supports first-class functions, meaning that a function can be assigned to a variable. Both user-defined and
 built-in functions can be referenced by a variable and invoked dynamically. Functions can be passed as arguments to
-other functions (feature called Higher-order functions) and function can return other functions.
+other functions (a feature called _Higher-order Functions_) and functions can return other functions.
 
-Recursion, a feature that allows a function to call itself, is supported by the language, but most of the PHP code
-focus on iteration.
+Recursion, a feature that allows a function to call itself, is supported by the language, but most PHP code
+is focused on iteration.
 
 New anonymous functions (with support for closures) are present since PHP 5.3 (2009).
 
@@ -80,8 +80,11 @@ One recommended way to use namespaces is outlined in [PSR-4][psr4], which aims t
 namespace convention to allow plug-and-play code.
 
 In October 2014 the PHP-FIG deprecated the previous autoloading standard: [PSR-0][psr0], which has been replaced with
-[PSR-4][psr4]. Currently both are still usable, as PSR-4 requires PHP 5.3 and many PHP 5.2-only projects currently implement
-PSR-0. If you're going to use an autoloader standard for a new application or package then you almost certainly want
+[PSR-4][psr4]. Currently both are still perfectly usable and PSR-0 is not going away. As PSR-4 requires PHP 5.3 and
+many PHP 5.2-only projects currently implement PSR-0. Luckily those PHP 5.2-only projects are starting to up their 
+version requirements, meaning PSR-0 is being used less and less.
+
+If you're going to use an autoloader standard for a new application or package then you almost certainly want 
 to look into PSR-4.
 
 * [Read about Namespaces][namespaces]
@@ -101,15 +104,17 @@ primarily of commonly needed datastructure classes (stack, queue, heap, and so o
 over these datastructures or your own classes which implement SPL interfaces.
 
 * [Read about the SPL][spl]
+* [SPL video course on Lynda.com(Paid)][spllynda]
 
 
 [spl]: http://php.net/book.spl
+[spllynda]: http://www.lynda.com/PHP-tutorials/Up-Running-Standard-PHP-Library/175038-2.html
 
 
 ## Command Line Interface {#command_line_interface_title}
 
 PHP was created to write web applications, but is also useful for scripting command line interface (CLI) programs.
-Command line PHP programs can help automate common tasks like testing, deployment, and application administrivia.
+Command line PHP programs can help automate common tasks like testing, deployment, and application administration.
 
 CLI PHP programs are powerful because you can use your app's code directly without having to create and secure a web
 GUI for it. Just be sure **not** to put your CLI PHP scripts in your public web root!
@@ -133,7 +138,7 @@ Let's write a simple "Hello, $name" CLI program. To try it out, create a file na
 {lang="php"}
 ~~~~~~~~
 <?php
-if ($argc != 2) {
+if ($argc !== 2) {
     echo "Usage: php hello.php [name].\n";
     exit(1);
 }

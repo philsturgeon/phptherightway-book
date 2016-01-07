@@ -11,15 +11,12 @@
 
 ## People to Follow {#people_to_follow_title}
 
-* [Rasmus Lerdorf](http://twitter.com/rasmus)
-* [Fabien Potencier](http://twitter.com/fabpot)
-* [Derick Rethans](http://twitter.com/derickr)
-* [Chris Shiflett](http://twitter.com/shiflett)
-* [Sebastian Bergmann](http://twitter.com/s_bergmann)
-* [Matthew Weier O'Phinney](http://twitter.com/mwop)
-* [Pádraic Brady](http://twitter.com/padraicb)
-* [Anthony Ferrara](http://twitter.com/ircmaxell)
-* [Nikita Popov](http://twitter.com/nikita_ppv)
+It's difficult to find interesting and knowledgable PHP
+community members when you are first starting out. You can
+find a comprehensive list of PHP community members and their
+Twitter handles at:
+
+<http://followphpdevs.com/>
 
 
 ## Mentoring {#mentoring_title}
@@ -90,6 +87,7 @@ For example, you can use the [FuelPHP Validation package], without needing to us
 * [Symfony Components]
 * [The League of Extraordinary Packages]
 * Laravel's Illuminate Components
+    * [IoC Container]
     * [Eloquent ORM]
     * [Queue]
 
@@ -101,12 +99,13 @@ components best decoupled from the Laravel framework are listed above._
 [PEAR]: /#pear
 [Dependency Management]: /#dependency_management
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/packages/v2
+[Aura]: http://auraphp.com/framework/2.x/en/
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
 [Orno]: https://github.com/orno
 [Symfony Components]: http://symfony.com/doc/current/components/index.html
 [The League of Extraordinary Packages]: http://thephpleague.com/
+[IoC Container]: https://github.com/illuminate/container
 [Eloquent ORM]: https://github.com/illuminate/database
 [Queue]: https://github.com/illuminate/queue
 [Illuminate components]: https://github.com/illuminate
@@ -130,12 +129,21 @@ PHP versions
 * [PHP Developer blog](http://blog.phpdeveloper.org/)
 
 
-## Video Tutorials {#videos_title}
+## Video Tutorials {#videos}
+
+### Youtube Channels 
+* [PHP Academy](https://www.youtube.com/user/phpacademy)
+* [The New Boston](https://www.youtube.com/user/thenewboston)
+* [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
+* [Level Up Tuts](https://www.youtube.com/user/LevelUpTuts)
 
 ### Paid Videos
 
 * [Standards and Best practices](http://teamtreehouse.com/library/standards-and-best-practices)
 * [PHP Training on Pluralsight](http://www.pluralsight.com/search/?searchTerm=php)
+* [PHP Training on Lynda.com](http://www.lynda.com/search?q=php)
+* [PHP Training on Tutsplus](http://code.tutsplus.com/categories/php/courses)
+* [Laracasts](https://laracasts.com/)
 
 
 ## Books {#books_title}
@@ -149,18 +157,23 @@ book to be added, send a PR and it will be reviewed for relevancy.
 
 ### Free Books
 
+* [PHP Pandas](http://daylerees.com/php-pandas/) - Aims to teach everyone how to be a web developer.
 * [PHP The Right Way](https://leanpub.com/phptherightway/) - This website is available as a book completely for free.
+* [Using Libsodium in PHP Projects](https://paragonie.com/book/pecl-libsodium) - Guide to using Libsodium PHP extension
+for modern, secure, and fast cryptography.
 
 ### Paid Books
 
-* [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - Get your code under control in a series of
-small, specific steps
+* [Build APIs You Won't Hate](https://leanpub.com/build-apis-you-wont-hate) - Everyone and their dog wants an API,
+so you should probably learn how to build them.
 * [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - Learn the security basics that a senior
 developer usually acquires over years of experience, all condensed down into one quick and easy handbook
-* [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - Learning
-to write testable doesn't have to suck
+* [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - Get your code under control in a series of
+small, specific steps
 * [Securing PHP: Core Concepts](https://leanpub.com/securingphp-coreconcepts) - A guide to some of the most common
 security terms and provides some examples of them in every day PHP
 * [Scaling PHP]( https://leanpub.com/scalingphp) - Stop playing sysadmin and get back to coding
 * [Signaling PHP]( https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
 run from the command line.
+* [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - Learning
+to write testable code doesn't have to suck

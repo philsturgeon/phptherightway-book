@@ -8,13 +8,14 @@
 There are bad people ready and willing to exploit your web application. It is important that you take necessary
 precautions to harden your web application's security. Luckily, the fine folks at
 [The Open Web Application Security Project][1] (OWASP) have compiled a comprehensive list of known security issues and
-methods to protect yourself against them. This is a must read for the security-conscious developer.
+methods to protect yourself against them. This is a must read for the security-conscious developer. [Survive The Deep End: PHP Security][3] by Padraic Brady is also another good web application security guide for PHP.
 
 * [Read the OWASP Security Guide][2]
 
 
 [1]: https://www.owasp.org/
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents
+[3]: http://phpsecurity.readthedocs.org/en/latest/index.html
 
 
 ## Password Hashing {#password_hashing_title}
@@ -111,6 +112,12 @@ libraries like [HTML Purifier][html-purifier] exists for this reason.
 
 [See Sanitization Filters][2]
 
+### Unserialization
+
+It is dangerous to `unserialize()` data from users or other untrusted sources.  Doing so can allow malicious users to instantiate objects (with user-defined properties) whose destructors will be executed, **even if the objects themselves aren't used**.  You should therefore avoid unserializing untrusted data.
+
+If you absolutely must unserialize data from untrusted sources, use PHP 7's [`allowed_classes`][unserialize] option to restrict which object types are allowed to be unserialized.
+
 ### Validation
 
 Validation ensures that foreign input is what you expect. For example, you may want to validate an email address, a
@@ -126,6 +133,7 @@ phone number, or age when processing a registration submission.
 [5]: http://php.net/function.filter-input
 [6]: http://php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
+[unserialize]: https://secure.php.net/manual/en/function.unserialize.php
 
 
 ## Configuration Files {#configuration_files_title}
@@ -164,7 +172,7 @@ production (live).
 
 ### Development
 
-To show every possible error during <strong>development</strong>, configure the following settings in your `php.ini`:
+To show every possible error during **development**, configure the following settings in your `php.ini`:
 
 
 {lang="ini"}
@@ -191,7 +199,7 @@ use either `-1` or `E_ALL | E_STRICT`.
 
 ### Production
 
-To hide errors on your <strong>production</strong> environment, configure your `php.ini` as:
+To hide errors on your **production** environment, configure your `php.ini` as:
 
 
 {lang="ini"}
