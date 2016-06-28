@@ -11,12 +11,15 @@
 
 ## People to Follow {#people_to_follow_title}
 
-It's difficult to find interesting and knowledgable PHP
+It's difficult to find interesting and knowledgeable PHP
 community members when you are first starting out. You can
 find a comprehensive list of PHP community members and their
 Twitter handles at:
 
-<http://followphpdevs.com/>
+* [25 PHP Developers to Follow Online][php-developers-to-follow]
+
+
+[php-developers-to-follow]: https://blog.newrelic.com/2014/05/02/25-php-developers-follow-online/
 
 
 ## Mentoring {#mentoring_title}
@@ -27,17 +30,21 @@ Twitter handles at:
 ## PHP PaaS Providers {#php_paas_providers_title}
 
 * [PagodaBox](https://pagodabox.com/)
-* [AppFog](https://appfog.com/)
+* [AppFog](https://www.ctl.io/appfog/)
 * [Heroku](https://devcenter.heroku.com/categories/php)
 * [fortrabbit](http://fortrabbit.com/)
 * [Engine Yard Cloud](https://www.engineyard.com/products/cloud)
 * [Red Hat OpenShift Platform](http://openshift.com)
-* [dotCloud](http://docs.dotcloud.com/services/php/)
+* [dotCloud](https://www.dotcloud.com/dev-center/platform-documentation)
 * [AWS Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/)
 * [cloudControl](https://www.cloudcontrol.com/)
 * [Windows Azure](http://www.windowsazure.com/)
 * [Google App Engine](https://developers.google.com/appengine/docs/php/gettingstarted/)
 * [Jelastic](http://jelastic.com/)
+* [Platform.sh](https://platform.sh/)
+* [Cloudways](https://www.cloudways.com/en/)
+
+To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
 
 
 ## Frameworks {#frameworks_title}
@@ -164,7 +171,7 @@ for modern, secure, and fast cryptography.
 
 ### Paid Books
 
-* [Build APIs You Won't Hate](https://leanpub.com/build-apis-you-wont-hate) - Everyone and their dog wants an API,
+* [Build APIs You Won't Hate](https://apisyouwonthate.com/) - Everyone and their dog wants an API,
 so you should probably learn how to build them.
 * [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - Learn the security basics that a senior
 developer usually acquires over years of experience, all condensed down into one quick and easy handbook
@@ -172,8 +179,9 @@ developer usually acquires over years of experience, all condensed down into one
 small, specific steps
 * [Securing PHP: Core Concepts](https://leanpub.com/securingphp-coreconcepts) - A guide to some of the most common
 security terms and provides some examples of them in every day PHP
-* [Scaling PHP]( https://leanpub.com/scalingphp) - Stop playing sysadmin and get back to coding
-* [Signaling PHP]( https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
+* [Scaling PHP](http://www.scalingphpbook.com/) - Stop playing sysadmin and get back to coding
+* [Signaling PHP](https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
 run from the command line.
 * [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - Learning
-to write testable code doesn't have to suck
+to write testable code doesn't have to suck.
+* [Minimum Viable Tests](https://leanpub.com/minimumviabletests) - Long-time PHP testing evangelist Chris Hartjes goes over what he feels is the minimum you need to know to get started.
