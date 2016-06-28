@@ -30,9 +30,10 @@ This will populate - or override - the contents of `manuscript/`. The only real
 way to test if it worked is to shove it into LeanPub and run a preview, which is
 something Phil usually does as he's the one who created the LeanPub app.
 
-Give him a poke on Twitter if you think this book is due an update. Send a PR
+Give Phil a [poke on Twitter] if you think this book is due an update. Send a PR
 to this repo if you notice a bug in the conversion process.
 
 [Josh Lockhart]: http://www.joshlockhart.com/
 [Phil Sturgeon]: https://philsturgeon.uk/
 [LeanPub book]: https://leanpub.com/phptherightway
+[poke on Twitter]: https://twitter.com/philsturgeon
