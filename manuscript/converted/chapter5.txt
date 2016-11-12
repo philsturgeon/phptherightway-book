@@ -6,7 +6,7 @@
 ## The Basics {#the_basics_title}
 
 PHP is a vast language that allows coders of all levels the ability to produce code not only quickly, but efficiently.
-However while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor
+However, while advancing through the language, we often forget the basics that we first learnt (or overlooked) in favor
 of short cuts and/or bad habits. To help combat this common issue, this section is aimed at reminding coders of the
 basic coding practices within PHP.
 
@@ -77,6 +77,8 @@ foreach ($periodIterator as $date) {
 }
 ~~~~~~~~
 
+A popular PHP API extension is [Carbon](http://carbon.nesbot.com). It inherits everything in the DateTime class, so involves minimal code alterations, but extra features include Localization support, further ways to add, subtract and format a DateTime object, plus a means to test your code by simulating a date and time of your choosing.
+
 * [Read about DateTime][datetime]
 * [Read about date formatting][dateformat] (accepted date format string options)
 
@@ -112,7 +114,7 @@ for a brief, practical summary.
 ### UTF-8 at the PHP level
 
 The basic string operations, like concatenating two strings and assigning strings to variables, don't need anything
-special for UTF-8. However most string functions, like `strpos()` and `strlen()`, do need special consideration. These
+special for UTF-8. However, most string functions, like `strpos()` and `strlen()`, do need special consideration. These
 functions often have an `mb_*` counterpart: for example, `mb_strpos()` and `mb_strlen()`. These `mb_*` strings are made
 available to you via the [Multibyte String Extension], and are specifically designed to operate on Unicode strings.
 

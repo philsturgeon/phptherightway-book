@@ -24,25 +24,25 @@ Twitter handles at:
 
 ## Mentoring {#mentoring_title}
 
-* [phpmentoring.org](http://phpmentoring.org/) - Formal, peer to peer mentoring in the PHP community.
+* [php-mentoring.org](http://php-mentoring.org/) - Formal, peer to peer mentoring in the PHP community.
 
 
 ## PHP PaaS Providers {#php_paas_providers_title}
 
-* [PagodaBox](https://pagodabox.com/)
+* [PagodaBox](https://pagodabox.io/)
 * [AppFog](https://www.ctl.io/appfog/)
 * [Heroku](https://devcenter.heroku.com/categories/php)
-* [fortrabbit](http://fortrabbit.com/)
-* [Engine Yard Cloud](https://www.engineyard.com/products/cloud)
-* [Red Hat OpenShift Platform](http://openshift.com)
-* [dotCloud](https://www.dotcloud.com/dev-center/platform-documentation)
-* [AWS Elastic Beanstalk](http://aws.amazon.com/elasticbeanstalk/)
-* [cloudControl](https://www.cloudcontrol.com/)
+* [fortrabbit](https://www.fortrabbit.com/)
+* [Engine Yard Cloud](https://www.engineyard.com/features)
+* [Red Hat OpenShift Platform](https://www.openshift.com/)
+* [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
 * [Windows Azure](http://www.windowsazure.com/)
-* [Google App Engine](https://developers.google.com/appengine/docs/php/gettingstarted/)
+* [Google App Engine](https://cloud.google.com/appengine/docs/php/)
 * [Jelastic](http://jelastic.com/)
 * [Platform.sh](https://platform.sh/)
 * [Cloudways](https://www.cloudways.com/en/)
+* [IBM Bluemix Cloud Foundry](https://console.ng.bluemix.net/)
+* [Pivotal Web Service Cloud Foundry](https://run.pivotal.io/)
 
 To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
 
@@ -138,7 +138,7 @@ PHP versions
 
 ## Video Tutorials {#videos}
 
-### Youtube Channels 
+### YouTube Channels
 * [PHP Academy](https://www.youtube.com/user/phpacademy)
 * [The New Boston](https://www.youtube.com/user/thenewboston)
 * [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
@@ -155,9 +155,7 @@ PHP versions
 
 ## Books {#books_title}
 
-There are a lot of books around for PHP but some are sadly now quite old and no longer contain accurate information.
-There are even books published for "PHP 6" which does not exist, and will not now ever exist. The next major version of
-PHP will be named "PHP 7" because of those books.
+There are many PHP books; sadly some are now quite old and no longer accurate. In particular, avoid books on "PHP 6", a version that will now never exist. The next major release of PHP after 5.6 was "PHP 7", [partly because of this](https://wiki.php.net/rfc/php6).
 
 This section aims to be a living document for recommended books on PHP development in general. If you would like your
 book to be added, send a PR and it will be reviewed for relevancy.
@@ -173,6 +171,7 @@ for modern, secure, and fast cryptography.
 
 * [Build APIs You Won't Hate](https://apisyouwonthate.com/) - Everyone and their dog wants an API,
 so you should probably learn how to build them.
+* [Modern PHP](http://shop.oreilly.com/product/0636920033868.do) - covers modern PHP features, best practices, testing, tuning, deployment and setting up a dev environment.
 * [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - Learn the security basics that a senior
 developer usually acquires over years of experience, all condensed down into one quick and easy handbook
 * [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - Get your code under control in a series of

@@ -44,10 +44,14 @@ Alternatively, if you want to squeeze more performance and stability out of Apac
 same FPM system as nginx and run the [worker MPM] or [event MPM] with mod_fastcgi or mod_fcgid. This configuration will
 be significantly more memory efficient and much faster but it is more work to set up.
 
+If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get great performance that is easy to setup.
+
 * [Read more on Apache][apache]
 * [Read more on Multi-Processing Modules][apache-MPM]
 * [Read more on mod_fastcgi][mod_fastcgi]
 * [Read more on mod_fcgid][mod_fcgid]
+* [Read more on mod_proxy_fcgi][mod_proxy_fcgi]
+* [Read more on setting up Apache and PHP-FPM with mod_proxy_fcgi][tutorial-mod_proxy_fcgi]
 
 
 [nginx]: http://nginx.org/
@@ -59,8 +63,11 @@ be significantly more memory efficient and much faster but it is more work to se
 [event MPM]: http://httpd.apache.org/docs/2.4/mod/event.html
 [apache]: http://httpd.apache.org/
 [apache-MPM]: http://httpd.apache.org/docs/2.4/mod/mpm_common.html
-[mod_fastcgi]: http://www.fastcgi.com/mod_fastcgi/docs/mod_fastcgi.html
+[mod_fastcgi]: https://blogs.oracle.com/opal/entry/php_fpm_fastcgi_process_manager
 [mod_fcgid]: http://httpd.apache.org/mod_fcgid/
+[mod_proxy_fcgi]: https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html
+[tutorial-mod_proxy_fcgi]: https://serversforhackers.com/video/apache-and-php-fpm
+
 
 ## Shared Servers {#shared_servers_title}
 
@@ -68,7 +75,7 @@ PHP has shared servers to thank for its popularity. It is hard to find a host wi
 the latest version. Shared servers allow you and other developers to deploy websites to a single machine. The upside to
 this is that it has become a cheap commodity. The downside is that you never know what kind of a ruckus your
 neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If
-your project's budget can afford to avoid shared servers you should.
+your project's budget can afford to avoid shared servers, you should.
 
 To make sure your shared servers are offering the latest versions of PHP, check out [PHP Versions](http://phpversions.info/shared-hosting/).
 
@@ -90,40 +97,46 @@ Among the tasks you might want to automate are:
 * Deployment
 
 
-### Build Automation Tools
+### Deployment Tools
 
-Build tools can be described as a collection of scripts that handle common tasks of software deployment. The build tool
-is not a part of your software, it acts on your software from 'outside'.
+Deployment tools can be described as a collection of scripts that handle common tasks of software deployment. The deployment tool is not a part of your software, it acts on your software from 'outside'.
 
-There are many open source tools available to help you with build automation, some are written in PHP others aren't.
-This shouldn't hold you back from using them, if they're better suited for the specific job. Here are a few examples:
+There are many open source tools available to help you with build automation and deployment, some are written in PHP others aren't. This shouldn't hold you back from using them, if they're better suited for the specific job. Here are a few examples:
 
-[Phing] is the easiest way to get started with automated deployment in the PHP world. With Phing you can control your
-packaging, deployment or testing process from within a simple XML build file. Phing (which is based on [Apache Ant])
-provides a rich set of tasks usually needed to install or update a web app and can be extended with additional custom
-tasks, written in PHP.
+[Phing] can control your packaging, deployment or testing process from within a XML build file. Phing (which is based on [Apache Ant]) provides a rich set of tasks usually needed to install or update a web application and can be extended with additional custom tasks, written in PHP. It's a solid and robust tool and has been around for a long time, however the tool could be perceived as a bit old fashioned because of the way it deals with configuration (XML files).
 
-[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way
-on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however people are **successfully deploying PHP systems** with it. Successful use of Capistrano depends on a working knowledge of Ruby and
-Rake.
+[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploying PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake. Dave Gardner's blog post [PHP Deployment with Capistrano][phpdeploy_capistrano] is a good starting point for PHP developers interested in Capistrano.
 
-Dave Gardner's blog post [PHP Deployment with Capistrano][phpdeploy_capistrano] is a good starting point for PHP
-developers interested in Capistrano.
+[Rocketeer] gets its inspiration and philosophy from the Laravel framework. Its goal is to be fast, elegant and ease to use with smart defaults. It features multiple servers, multiple stages, atomic deploys and deployment can be performed in parallel. Everything in the tool can be hot swapped or extended, and everything is written in PHP.
 
-[Chef] is more than a deployment framework, it is a very powerful Ruby based system integration framework that doesn't
-just deploy your app but can build your whole server environment or virtual boxes.
+[Deployer] is a deployment tool written in PHP, it's simple and functional. Runs tasks in parallel, atomic deployment, keeps consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii. Younes Rafie's article  [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
 
-[Deployer] is a deployment tool written in PHP, it's simple and functional. Runs tasks in parallel, atomic deployment, keeps consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii.
-
-#### Chef resources for PHP developers:
-
-* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2][chef_vagrant_and_ec2]
-* [Chef Cookbook which installs and configures PHP and the PEAR package management system][Chef_cookbook]
-* [Chef video tutorial series][Chef_tutorial]
+[Magallanes] another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and have some built in tasks that you can leverage for common tools and frameworks.
 
 #### Further reading:
 
 * [Automate your project with Apache Ant][apache_ant_tutorial]
+* [Expert PHP Deployments][expert_php_deployments] - free book on deployment with Capistrano, Phing and Vagrant.
+* [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
+
+### Server Provisioning
+
+Managing and configuring servers can be a daunting task when faced with many servers. There are tools for dealing with this so you can automate your infrastructure to make sure you have the right servers and that they're configured properly. They often integrate with the larger cloud hosting providers (Amazon Web Services, Heroku, DigitalOcean, etc) for managing instances, which makes scaling an application a lot easier.
+
+[Ansible] is a tool that manages your infrastructure through YAML files. It's simple to get started with and can manage complex and large scale applications. There is an API for managing cloud instances and it can manage them through a dynamic inventory using certain tools.
+
+[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update itself if necessary. In the master-less mode you can push changes to your nodes. 
+
+[Chef] is a powerful Ruby based system integration framework that you can build your whole server environment or virtual boxes with. It integrates well with Amazon Web Services through their service called OpsWorks.
+
+#### Further reading:
+
+* [An Ansible Tutorial][an_ansible_tutorial]
+* [Ansible for DevOps][ansible_for_devops] - paid book on everything Ansible
+* [Ansible for AWS][ansible_for_aws] - paid book on integrating Ansible and Amazon Web Services
+* [Three part blog series about deploying a LAMP application with Chef, Vagrant, and EC2][chef_vagrant_and_ec2]
+* [Chef Cookbook which installs and configures PHP and the PEAR package management system][Chef_cookbook]
+* [Chef video tutorial series][Chef_tutorial]
 
 ### Continuous Integration
 
@@ -151,6 +164,7 @@ PHP.
 [Apache Ant]: http://ant.apache.org/
 [Capistrano]: https://github.com/capistrano/capistrano/wiki
 [phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
+[phpdeploy_deployer]: http://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
 [chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
 [Chef_cookbook]: https://github.com/chef-cookbooks/php
@@ -160,4 +174,13 @@ PHP.
 [Jenkins]: http://jenkins-ci.org/
 [PHPCI]: http://www.phptesting.org/
 [Teamcity]: http://www.jetbrains.com/teamcity/
-[Deployer]: https://github.com/deployphp/deployer
+[Deployer]: http://deployer.org/
+[Rocketeer]: http://rocketeer.autopergamene.eu/
+[Magallanes]: http://magephp.com/
+[expert_php_deployments]: http://viccherubini.com/assets/Expert-PHP-Deployments.pdf
+[deploying_php_applications]: http://www.deployingphpapplications.com
+[Ansible]: https://www.ansible.com/
+[Puppet]: https://puppet.com/
+[ansible_for_devops]: https://leanpub.com/ansible-for-devops
+[ansible_for_aws]: https://leanpub.com/ansible-for-aws
+[an_ansible_tutorial]: https://serversforhackers.com/an-ansible-tutorial

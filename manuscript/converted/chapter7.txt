@@ -144,7 +144,7 @@ foreach ($db->query('SELECT * FROM table') as $row) {
 </ul>
 ~~~~~~~~
 
-This is bad practice for all sorts of reasons, mainly that its hard to debug, hard to test, hard to read and it is
+This is bad practice for all sorts of reasons, mainly that it's hard to debug, hard to test, hard to read and it is
 going to output a lot of fields if you don't put a limit on there.
 
 While there are many other solutions to doing this - depending on if you prefer [OOP](/#object-oriented-programming) or
@@ -250,12 +250,12 @@ installed in any application you like:
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
 * [Propel][7]
-* [ZF2 Db][4]
+* [Zend-db][4]
 
 
 [1]: http://php.net/book.pdo
 [2]: http://www.doctrine-project.org/projects/dbal.html
-[4]: http://packages.zendframework.com/docs/latest/manual/en/index.html#zend-db
+[4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
 [6]: https://github.com/auraphp/Aura.Sql
 [7]: http://propelorm.org/
 [psr0]: http://www.php-fig.org/psr/psr-0/
