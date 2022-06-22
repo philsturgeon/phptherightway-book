@@ -9,7 +9,7 @@ The website was created originally by [Josh Lockhart], and [Phil Sturgeon] later
 joined in to write a bunch of content, and help keep on top of pull requests. He
 also wrote this conversion script to turn phptherightway.com content into the
 [LeanPub book], which is available entirely for free, or an optional donation,
-100% of which goes to EFF. Josh and Phil get nothing.
+100% of which goes to PHP Women. Josh and Phil get nothing.
 
 Josh approves of this book.
 
