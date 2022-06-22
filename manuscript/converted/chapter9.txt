@@ -98,7 +98,8 @@ rewritten like this:
 {lang="php"}
 ~~~~~~~~
 <?php
-echo isset($foo['bar']) ? $foo['bar'] : '';
+// Null Coalescing Operator
+echo $foo['bar'] ?? '';
 ~~~~~~~~
 
 One instance where error suppression might make sense is where `fopen()` fails to find a file to load. You could check
@@ -117,7 +118,7 @@ with the following.
 xdebug.scream = On
 ~~~~~~~~
 
-You can also set this value at runtime with the `ini_set` function 
+You can also set this value at runtime with the `ini_set` function
 
 
 {lang="php"}
@@ -146,9 +147,10 @@ PHP is perfectly capable of being an "exception-heavy" programming language, and
 make the switch. Basically you can throw your "errors" as "exceptions" using the `ErrorException` class, which extends
 the `Exception` class.
 
-This is a common practice implemented by a large number of modern frameworks such as Symfony and Laravel. By default
-Laravel will display all errors as exceptions using the [Whoops!] package if the `app.debug` switch is turned on, then
-hide them if the switch is turned off.
+This is a common practice implemented by a large number of modern frameworks such as Symfony and Laravel. In debug
+mode *(or dev mode)* both of these frameworks will display a nice and clean *stack trace*.
+
+There are also some packages available for better error and exception handling and reporting. Like [Whoops!], which comes with the default installation of Laravel and can be used in any framework as well.
 
 By throwing errors as exceptions in development you can handle them better than the usual result, and if you see an
 exception during development you can wrap it in a catch statement with specific instructions on how to handle the
@@ -164,14 +166,14 @@ More information on this and details on how to use `ErrorException` with error h
 
 
 [errorreport]: /#error_reporting
-[Xdebug]: http://xdebug.org/docs/basic
-[Scream]: http://php.net/book.scream
-[Error Control Operators]: http://php.net/language.operators.errorcontrol
-[SitePoint]: http://www.sitepoint.com/
-[Whoops!]: http://filp.github.io/whoops/
-[errorexception]: http://php.net/class.errorexception
-[Predefined Constants for Error Handling]: http://php.net/errorfunc.constants
-[error_reporting]: http://php.net/function.error-reporting
+[Xdebug]: https://xdebug.org/docs/basic
+[Scream]: https://secure.php.net/book.scream
+[Error Control Operators]: https://secure.php.net/language.operators.errorcontrol
+[SitePoint]: https://www.sitepoint.com/
+[Whoops!]: https://filp.github.io/whoops/
+[errorexception]: https://secure.php.net/class.errorexception
+[Predefined Constants for Error Handling]: https://secure.php.net/errorfunc.constants
+[error_reporting]: https://secure.php.net/function.error-reporting
 
 
 ## Exceptions {#exceptions_title}
@@ -242,11 +244,9 @@ standard Exception which is vague, or creating a custom Exception just for that,
 * [Read about Exceptions][exceptions]
 * [Read about SPL Exceptions][splexe]
 * [Nesting Exceptions In PHP][nesting-exceptions-in-php]
-* [Exception Best Practices in PHP 5.3][exception-best-practices53]
 
 
 [splext]: /#standard_php_library
-[exceptions]: http://php.net/language.exceptions
-[splexe]: http://php.net/spl.exceptions
-[nesting-exceptions-in-php]: http://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/
-[exception-best-practices53]: http://ralphschindler.com/2010/09/15/exception-best-practices-in-php-5-3
+[exceptions]: https://secure.php.net/language.exceptions
+[splexe]: https://secure.php.net/spl.exceptions
+[nesting-exceptions-in-php]: https://www.brandonsavage.net/exceptional-php-nesting-exceptions-in-php/

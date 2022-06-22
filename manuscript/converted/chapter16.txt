@@ -1,158 +1,5 @@
 
 
-# Resources {#resources_title}
-
-
-## From the Source {#from_the_source_title}
-
-* [PHP Website](http://php.net/)
-* [PHP Documentation](http://php.net/docs.php)
-
-
-## People to Follow {#people_to_follow_title}
-
-It's difficult to find interesting and knowledgeable PHP
-community members when you are first starting out. You can
-find a comprehensive list of PHP community members and their
-Twitter handles at:
-
-* [25 PHP Developers to Follow Online][php-developers-to-follow]
-
-
-[php-developers-to-follow]: https://blog.newrelic.com/2014/05/02/25-php-developers-follow-online/
-
-
-## Mentoring {#mentoring_title}
-
-* [php-mentoring.org](http://php-mentoring.org/) - Formal, peer to peer mentoring in the PHP community.
-
-
-## PHP PaaS Providers {#php_paas_providers_title}
-
-* [PagodaBox](https://pagodabox.io/)
-* [AppFog](https://www.ctl.io/appfog/)
-* [Heroku](https://devcenter.heroku.com/categories/php)
-* [fortrabbit](https://www.fortrabbit.com/)
-* [Engine Yard Cloud](https://www.engineyard.com/features)
-* [Red Hat OpenShift Platform](https://www.openshift.com/)
-* [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
-* [Windows Azure](http://www.windowsazure.com/)
-* [Google App Engine](https://cloud.google.com/appengine/docs/php/)
-* [Jelastic](http://jelastic.com/)
-* [Platform.sh](https://platform.sh/)
-* [Cloudways](https://www.cloudways.com/en/)
-* [IBM Bluemix Cloud Foundry](https://console.ng.bluemix.net/)
-* [Pivotal Web Service Cloud Foundry](https://run.pivotal.io/)
-
-To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
-
-
-## Frameworks {#frameworks_title}
-
-Rather than re-invent the wheel, many PHP developers use frameworks to build out web applications. Frameworks abstract
-away many of the low-level concerns and provide helpful, easy-to-use interfaces to complete common tasks.
-
-You do not need to use a framework for every project. Sometimes plain PHP is the right way to go, but if you do need a
-framework then there are three main types available:
-
-* Micro Frameworks
-* Full-Stack Frameworks
-* Component Frameworks
-
-Micro-frameworks are essentially a wrapper to route a HTTP request to a callback, controller, method, etc as quickly as
-possible, and sometimes come with a few extra libraries to assist development such as basic database wrappers and the
-like. They are prominently used to build remote HTTP services.
-
-Many frameworks add a considerable number of features on top of what is available in a micro-framework and these are
-known Full-Stack Frameworks. These often come bundled with ORMs, Authentication packages, etc.
-
-Component-based frameworks are collections of specialized and single-purpose libraries. Disparate component-based
-frameworks can be used together to make a micro- or full-stack framework.
-
-* [Popular PHP Frameworks](https://github.com/codeguy/php-the-right-way/wiki/Frameworks)
-
-## Components {#components_title}
-
-As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing
-shared code. Various component repositories exist, the main two of which are:
-
-* [Packagist]
-* [PEAR]
-
-Both of these repositories have command line tools associated with them to help the installation and upgrade processes,
-and have been explained in more detail in the [Dependency Management] section.
-
-There are also component-based frameworks and component-vendors that offer no framework at all. These projects provide
-another source of packages which ideally have little to no dependencies on other packages, or specific frameworks.
-
-For example, you can use the [FuelPHP Validation package], without needing to use the FuelPHP framework itself.
-
-* [Aura]
-* [FuelPHP]
-* [Hoa Project]
-* [Orno]
-* [Symfony Components]
-* [The League of Extraordinary Packages]
-* Laravel's Illuminate Components
-    * [IoC Container]
-    * [Eloquent ORM]
-    * [Queue]
-
-_Laravel's [Illuminate components] will become better decoupled from the Laravel framework. For now, only the
-components best decoupled from the Laravel framework are listed above._
-
-
-[Packagist]: /#composer_and_packagist
-[PEAR]: /#pear
-[Dependency Management]: /#dependency_management
-[FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/framework/2.x/en/
-[FuelPHP]: https://github.com/fuelphp
-[Hoa Project]: https://github.com/hoaproject
-[Orno]: https://github.com/orno
-[Symfony Components]: http://symfony.com/doc/current/components/index.html
-[The League of Extraordinary Packages]: http://thephpleague.com/
-[IoC Container]: https://github.com/illuminate/container
-[Eloquent ORM]: https://github.com/illuminate/database
-[Queue]: https://github.com/illuminate/queue
-[Illuminate components]: https://github.com/illuminate
-
-
-## Other Useful Resources {#other_resources_title}
-
-### Cheatsheets
-
-* [PHP Cheatsheets](http://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various
-PHP versions
-* [PHP Security Cheatsheet](https://www.owasp.org/index.php/PHP_Security_Cheat_Sheet)
-
-### More best practices
-
-* [PHP Best Practices](https://phpbestpractices.org/)
-* [Best practices for Modern PHP Development](https://www.airpair.com/php/posts/best-practices-for-modern-php-development)
-
-### PHP universe
-
-* [PHP Developer blog](http://blog.phpdeveloper.org/)
-
-
-## Video Tutorials {#videos}
-
-### YouTube Channels
-* [PHP Academy](https://www.youtube.com/user/phpacademy)
-* [The New Boston](https://www.youtube.com/user/thenewboston)
-* [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
-* [Level Up Tuts](https://www.youtube.com/user/LevelUpTuts)
-
-### Paid Videos
-
-* [Standards and Best practices](http://teamtreehouse.com/library/standards-and-best-practices)
-* [PHP Training on Pluralsight](http://www.pluralsight.com/search/?searchTerm=php)
-* [PHP Training on Lynda.com](http://www.lynda.com/search?q=php)
-* [PHP Training on Tutsplus](http://code.tutsplus.com/categories/php/courses)
-* [Laracasts](https://laracasts.com/)
-
-
 ## Books {#books_title}
 
 There are many PHP books; sadly some are now quite old and no longer accurate. In particular, avoid books on "PHP 6", a version that will now never exist. The next major release of PHP after 5.6 was "PHP 7", [partly because of this](https://wiki.php.net/rfc/php6).
@@ -181,6 +28,174 @@ security terms and provides some examples of them in every day PHP
 * [Scaling PHP](http://www.scalingphpbook.com/) - Stop playing sysadmin and get back to coding
 * [Signaling PHP](https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
 run from the command line.
-* [The Grumpy Programmer's Guide To Building Testable PHP Applications](https://leanpub.com/grumpy-testing) - Learning
-to write testable code doesn't have to suck.
 * [Minimum Viable Tests](https://leanpub.com/minimumviabletests) - Long-time PHP testing evangelist Chris Hartjes goes over what he feels is the minimum you need to know to get started.
+* [Domain-Driven Design in PHP](https://leanpub.com/ddd-in-php) - See real examples written in PHP showcasing Domain-Driven Design Architectural Styles (Hexagonal Architecture, CQRS or Event Sourcing), Tactical Design Patterns, and Bounded Context Integration.
+
+
+## People to Follow {#people_to_follow_title}
+
+It's difficult to find interesting and knowledgeable PHP
+community members when you are first starting out. You can
+find an abbreviated list of PHP community members to get you started at:
+
+* <https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/>
+* <https://twitter.com/CalEvans/lists/phpeople>
+
+
+## Other Useful Resources {#other_resources_title}
+
+### Cheatsheets
+
+* [PHP Cheatsheets](http://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various PHP versions.
+* [Modern PHP Cheatsheet](https://github.com/smknstd/modern-php-cheatsheet) documents modern (PHP 7.0+) idioms in a unified document.
+* [OWASP Security Cheatsheets](https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series) - provides a concise collection of high value information on specific application security topics. 
+
+### More best practices
+
+* [PHP Best Practices](https://phpbestpractices.org/)
+* [Why You Should Be Using Supported PHP Versions](https://kinsta.com/blog/php-versions/)
+
+### News around the PHP and web development communities
+
+You can subscribe to weekly newsletters to keep yourself informed on new libraries, latest news, events and general
+announcements, as well as additional resources being published every now and then:
+
+* [PHP Weekly](http://www.phpweekly.com)
+* [JavaScript Weekly](https://javascriptweekly.com/)
+* [Frontend Focus](https://frontendfoc.us/)
+* [Mobile Web Weekly](https://mobiledevweekly.com/)
+
+There are also Weeklies on other platforms you might be interested in; here's [a list of some](https://github.com/jondot/awesome-weekly).
+
+### PHP universe
+
+* [PHP Developer blog](https://blog.phpdeveloper.org/)
+
+
+## Video Tutorials {#videos}
+
+### YouTube Channels
+* [PHP Academy](https://www.youtube.com/user/phpacademy)
+* [The New Boston](https://www.youtube.com/user/thenewboston)
+* [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
+* [Level Up Tuts](https://www.youtube.com/user/LevelUpTuts)
+
+### Paid Videos
+
+* [Standards and Best practices](https://teamtreehouse.com/library/php-standards-and-best-practices)
+* [PHP Training on Pluralsight](https://www.pluralsight.com/search?q=php)
+* [PHP Training on Lynda.com](https://www.lynda.com/search?q=php)
+* [PHP Training on Tutsplus](https://code.tutsplus.com/categories/php/courses)
+* [Laracasts](https://laracasts.com/)
+
+
+## Components {#components_title}
+
+As mentioned above "Components" are another approach to the common goal of creating, distributing and implementing
+shared code. Various component repositories exist, the main two of which are:
+
+* [Packagist]
+* [PEAR]
+
+Both of these repositories have command line tools associated with them to help the installation and upgrade processes,
+and have been explained in more detail in the [Dependency Management] section.
+
+There are also component-based frameworks and component-vendors that offer no framework at all. These projects provide
+another source of packages which ideally have little to no dependencies on other packages, or specific frameworks.
+
+For example, you can use the [FuelPHP Validation package], without needing to use the FuelPHP framework itself.
+
+* [Aura]
+* CakePHP Components
+    * [Collection]
+    * [Database]
+    * [Datasource]
+    * [Event]
+    * [I18n]
+    * [ORM]   
+* [FuelPHP]
+* [Hoa Project]
+* [Symfony Components]
+* [The League of Extraordinary Packages]
+* Laravel's Illuminate Components
+    * [IoC Container]
+    * [Eloquent ORM]
+    * [Queue]
+
+_Laravel's [Illuminate components] will become better decoupled from the Laravel framework. For now, only the
+components best decoupled from the Laravel framework are listed above._
+
+
+[Packagist]: /#composer_and_packagist
+[PEAR]: /#pear
+[Dependency Management]: /#dependency_management
+[FuelPHP Validation package]: https://github.com/fuelphp/validation
+[Aura]: http://auraphp.com/framework/
+[FuelPHP]: https://github.com/fuelphp
+[Hoa Project]: https://github.com/hoaproject
+[Symfony Components]: https://symfony.com/doc/current/components/index.html
+[The League of Extraordinary Packages]: https://thephpleague.com/
+[IoC Container]: https://github.com/illuminate/container
+[Eloquent ORM]: https://github.com/illuminate/database
+[Queue]: https://github.com/illuminate/queue
+[Illuminate components]: https://github.com/illuminate
+[Collection]: https://github.com/cakephp/collection
+[Database]: https://github.com/cakephp/database
+[Datasource]: https://github.com/cakephp/datasource
+[Event]: https://github.com/cakephp/event
+[I18n]: https://github.com/cakephp/i18n
+[ORM]: https://github.com/cakephp/orm
+
+
+## PHP PaaS Providers {#php_paas_providers_title}
+
+* [AppFog](https://www.ctl.io/appfog/)
+* [Amezmo](https://www.amezmo.com)
+* [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
+* [Cloudways](https://www.cloudways.com/)
+* [Divio](https://www.divio.com/php/)
+* [Engine Yard Cloud](https://www.engineyard.com/features)
+* [fortrabbit](https://www.fortrabbit.com/)
+* [Google App Engine](https://cloud.google.com/appengine/docs/php/)
+* [Heroku](https://devcenter.heroku.com/categories/php-support)
+* [IBM Cloud](https://console.bluemix.net/docs/runtimes/php/getting-started.html#getting_started)
+* [Jelastic](https://jelastic.com/)
+* [Microsoft Azure](https://azure.microsoft.com/)
+* [Nanobox](https://nanobox.io/)
+* [Pivotal Web Services](https://run.pivotal.io/)
+* [Platform.sh](https://platform.sh/)
+* [Red Hat OpenShift](https://www.openshift.com/)
+
+To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
+
+
+# Resources {#resources_title}
+
+
+## Frameworks {#frameworks_title}
+
+Rather than re-invent the wheel, many PHP developers use frameworks to build out web applications. Frameworks abstract
+away many of the low-level concerns and provide helpful, easy-to-use interfaces to complete common tasks.
+
+You do not need to use a framework for every project. Sometimes plain PHP is the right way to go, but if you do need a
+framework then there are three main types available:
+
+* Micro Frameworks
+* Full-Stack Frameworks
+* Component Frameworks
+
+Micro-frameworks are essentially a wrapper to route a HTTP request to a callback, controller, method, etc as quickly as
+possible, and sometimes come with a few extra libraries to assist development such as basic database wrappers and the
+like. They are prominently used to build remote HTTP services.
+
+Many frameworks add a considerable number of features on top of what is available in a micro-framework; these are
+called Full-Stack Frameworks. These often come bundled with ORMs, Authentication packages, etc.
+
+Component-based frameworks are collections of specialized and single-purpose libraries. Disparate component-based
+frameworks can be used together to make a micro- or full-stack framework.
+
+
+## From the Source {#from_the_source_title}
+
+* [PHP Website](https://secure.php.net/)
+* [PHP Documentation](https://secure.php.net/docs.php)

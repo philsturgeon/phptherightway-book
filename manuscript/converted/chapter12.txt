@@ -1,18 +1,5 @@
 
 
-# Servers and Deployment {#servers_and_deployment_title}
-
-PHP applications can be deployed and run on production web servers in a number of ways.
-
-
-## Platform as a Service (PaaS) {#platform_as_a_service_title}
-
-PaaS provides the system and network architecture necessary to run PHP applications on the web. This means little to no
-configuration for launching PHP applications or PHP frameworks.
-
-Recently PaaS has become a popular method for deploying, hosting, and scaling PHP applications of all sizes. You can
-find a list of [PHP PaaS "Platform as a Service" providers](#php_paas_providers) in our [resources section](#resources).
-
 ## Virtual or Dedicated Servers {#virtual_or_dedicated_servers_title}
 
 If you are comfortable with systems administration, or are interested in learning it, virtual or dedicated servers give
@@ -30,7 +17,7 @@ especially important on virtual servers that don't have much memory to spare.
 
 ### Apache and PHP
 
-PHP and Apache have a long history together. Apache is wildly configurable and has many available 
+PHP and Apache have a long history together. Apache is wildly configurable and has many available
 [modules][apache-modules] to extend functionality. It is a popular choice for shared servers and an easy setup for PHP
 frameworks and open source apps like WordPress. Unfortunately, Apache uses more resources than nginx by default and
 cannot handle as many visitors at the same time.
@@ -54,17 +41,17 @@ If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get grea
 * [Read more on setting up Apache and PHP-FPM with mod_proxy_fcgi][tutorial-mod_proxy_fcgi]
 
 
-[nginx]: http://nginx.org/
-[phpfpm]: http://php.net/install.fpm
+[nginx]: https://nginx.org/
+[phpfpm]: https://secure.php.net/install.fpm
 [secure-nginx-phpfpm]: https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
-[apache-modules]: http://httpd.apache.org/docs/2.4/mod/
-[prefork MPM]: http://httpd.apache.org/docs/2.4/mod/prefork.html
-[worker MPM]: http://httpd.apache.org/docs/2.4/mod/worker.html
-[event MPM]: http://httpd.apache.org/docs/2.4/mod/event.html
-[apache]: http://httpd.apache.org/
-[apache-MPM]: http://httpd.apache.org/docs/2.4/mod/mpm_common.html
+[apache-modules]: https://httpd.apache.org/docs/2.4/mod/
+[prefork MPM]: https://httpd.apache.org/docs/2.4/mod/prefork.html
+[worker MPM]: https://httpd.apache.org/docs/2.4/mod/worker.html
+[event MPM]: https://httpd.apache.org/docs/2.4/mod/event.html
+[apache]: https://httpd.apache.org/
+[apache-MPM]: https://httpd.apache.org/docs/2.4/mod/mpm_common.html
 [mod_fastcgi]: https://blogs.oracle.com/opal/entry/php_fpm_fastcgi_process_manager
-[mod_fcgid]: http://httpd.apache.org/mod_fcgid/
+[mod_fcgid]: hhttps://httpd.apache.org/mod_fcgid/
 [mod_proxy_fcgi]: https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html
 [tutorial-mod_proxy_fcgi]: https://serversforhackers.com/video/apache-and-php-fpm
 
@@ -79,6 +66,19 @@ your project's budget can afford to avoid shared servers, you should.
 
 To make sure your shared servers are offering the latest versions of PHP, check out [PHP Versions](http://phpversions.info/shared-hosting/).
 
+
+# Servers and Deployment {#servers_and_deployment_title}
+
+PHP applications can be deployed and run on production web servers in a number of ways.
+
+
+## Platform as a Service (PaaS) {#platform_as_a_service_title}
+
+PaaS provides the system and network architecture necessary to run PHP applications on the web. This means little to no
+configuration for launching PHP applications or PHP frameworks.
+
+Recently PaaS has become a popular method for deploying, hosting, and scaling PHP applications of all sizes. You can
+find a list of [PHP PaaS "Platform as a Service" providers](#php_paas_providers) in our [resources section](#resources).
 
 ## Building and Deploying your Application {#building_and_deploying_your_application_title}
 
@@ -105,18 +105,19 @@ There are many open source tools available to help you with build automation and
 
 [Phing] can control your packaging, deployment or testing process from within a XML build file. Phing (which is based on [Apache Ant]) provides a rich set of tasks usually needed to install or update a web application and can be extended with additional custom tasks, written in PHP. It's a solid and robust tool and has been around for a long time, however the tool could be perceived as a bit old fashioned because of the way it deals with configuration (XML files).
 
-[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploying PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake. Dave Gardner's blog post [PHP Deployment with Capistrano][phpdeploy_capistrano] is a good starting point for PHP developers interested in Capistrano.
+[Capistrano] is a system for *intermediate-to-advanced programmers* to execute commands in a structured, repeatable way on one or more remote machines. It is pre-configured for deploying Ruby on Rails applications, however you can successfully deploy PHP systems with it. Successful use of Capistrano depends on a working knowledge of Ruby and Rake.
 
-[Rocketeer] gets its inspiration and philosophy from the Laravel framework. Its goal is to be fast, elegant and ease to use with smart defaults. It features multiple servers, multiple stages, atomic deploys and deployment can be performed in parallel. Everything in the tool can be hot swapped or extended, and everything is written in PHP.
+[Ansistrano] is a couple of Ansible roles to easily manage the deployment process (deploy and rollback) for scripting applications such as PHP, Python and Ruby. It's an Ansible port for [Capistrano]. It's been used by quite a lot of PHP companies already.
 
-[Deployer] is a deployment tool written in PHP, it's simple and functional. Runs tasks in parallel, atomic deployment, keeps consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii. Younes Rafie's article  [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
+[Rocketeer] gets its inspiration and philosophy from the Laravel framework. Its goal is to be fast, elegant and easy to use with smart defaults. It features multiple servers, multiple stages, atomic deploys and deployment can be performed in parallel. Everything in the tool can be hot swapped or extended, and everything is written in PHP.
 
-[Magallanes] another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and have some built in tasks that you can leverage for common tools and frameworks.
+[Deployer] is a deployment tool written in PHP. It's simple and functional. Features include running tasks in parallel, atomic deployment and keeping consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii are available. Younes Rafie's article  [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
+
+[Magallanes] is another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and has some built in tasks that you can leverage for common tools and frameworks.
 
 #### Further reading:
 
 * [Automate your project with Apache Ant][apache_ant_tutorial]
-* [Expert PHP Deployments][expert_php_deployments] - free book on deployment with Capistrano, Phing and Vagrant.
 * [Deploying PHP Applications][deploying_php_applications] - paid book on best practices and tools for PHP deployment.
 
 ### Server Provisioning
@@ -125,7 +126,7 @@ Managing and configuring servers can be a daunting task when faced with many ser
 
 [Ansible] is a tool that manages your infrastructure through YAML files. It's simple to get started with and can manage complex and large scale applications. There is an API for managing cloud instances and it can manage them through a dynamic inventory using certain tools.
 
-[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update itself if necessary. In the master-less mode you can push changes to your nodes. 
+[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update itself if necessary. In the master-less mode you can push changes to your nodes.
 
 [Chef] is a powerful Ruby based system integration framework that you can build your whole server environment or virtual boxes with. It integrates well with Amazon Web Services through their service called OpsWorks.
 
@@ -156,29 +157,29 @@ PHP.
 
 * [Continuous Integration with Jenkins][Jenkins]
 * [Continuous Integration with PHPCI][PHPCI]
+* [Continuous Integration with PHP Censor][PHP Censor]
 * [Continuous Integration with Teamcity][Teamcity]
 
-
-[buildautomation]: http://en.wikipedia.org/wiki/Build_automation
-[Phing]: http://www.phing.info/
-[Apache Ant]: http://ant.apache.org/
-[Capistrano]: https://github.com/capistrano/capistrano/wiki
-[phpdeploy_capistrano]: http://www.davegardner.me.uk/blog/2012/02/13/php-deployment-with-capistrano/
-[phpdeploy_deployer]: http://www.sitepoint.com/deploying-php-applications-with-deployer/
+[buildautomation]: https://wikipedia.org/wiki/Build_automation
+[Phing]: https://www.phing.info/
+[Apache Ant]: https://ant.apache.org/
+[Capistrano]: http://capistranorb.com/
+[Ansistrano]: https://ansistrano.com
+[phpdeploy_deployer]: https://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
 [chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
 [Chef_cookbook]: https://github.com/chef-cookbooks/php
 [Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ
-[apache_ant_tutorial]: http://net.tutsplus.com/tutorials/other/automate-your-projects-with-apache-ant/
+[apache_ant_tutorial]: https://code.tutsplus.com/tutorials/automate-your-projects-with-apache-ant--net-18595
 [Travis CI]: https://travis-ci.org/
-[Jenkins]: http://jenkins-ci.org/
-[PHPCI]: http://www.phptesting.org/
-[Teamcity]: http://www.jetbrains.com/teamcity/
-[Deployer]: http://deployer.org/
+[Jenkins]: https://jenkins.io/
+[PHPCI]: https://github.com/dancryer/phpci
+[PHP Censor]: https://github.com/php-censor/php-censor
+[Teamcity]: https://www.jetbrains.com/teamcity/
+[Deployer]: https://deployer.org/
 [Rocketeer]: http://rocketeer.autopergamene.eu/
-[Magallanes]: http://magephp.com/
-[expert_php_deployments]: http://viccherubini.com/assets/Expert-PHP-Deployments.pdf
-[deploying_php_applications]: http://www.deployingphpapplications.com
+[Magallanes]: https://www.magephp.com/
+[deploying_php_applications]: https://deployingphpapplications.com/
 [Ansible]: https://www.ansible.com/
 [Puppet]: https://puppet.com/
 [ansible_for_devops]: https://leanpub.com/ansible-for-devops

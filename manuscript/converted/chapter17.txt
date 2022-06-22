@@ -6,41 +6,15 @@ The PHP community is as diverse as it is large, and its members are ready and wi
 Consider joining your local PHP user group (PUG) or attending larger PHP conferences to learn more about the best
 practices shown here. You can hang out on IRC in the #phpc channel on [irc.freenode.com][php-irc] and follow the
 [@phpc][phpc-twitter] twitter account. Get out there, meet new developers, learn new topics, and above all, make new
-friends! Other community resources include the Google+ PHP [Programmer community][php-programmers-gplus] and
-[StackOverflow][php-so].
+friends! Other community resources include [StackOverflow][php-so].
 
 [Read the Official PHP Events Calendar][php-calendar]
 
 
-[php-irc]: http://webchat.freenode.net/?channels=phpc
+[php-irc]: https://webchat.freenode.net/?channels=phpc
 [phpc-twitter]: https://twitter.com/phpc
-[php-programmers-gplus]: https://plus.google.com/u/0/communities/104245651975268426012
-[php-so]: http://stackoverflow.com/questions/tagged/php
-[php-calendar]: http://php.net/cal.php
-
-
-## PHP User Groups {#user_groups_title}
-
-If you live in a larger city, odds are there's a PHP user group nearby. You can easily find your local PUG at
-the [usergroup-list at php.net][php-uglist] which is based upon [PHP.ug][php-ug]. Alternate sources might be
-[Meetup.com][meetup] or a search for ```php user group near me``` using your favorite search engine
-(i.e. [Google][google]). If you live in a smaller town, there may not be a local PUG; if that's the case, start one!
-
-Special mention should be made of two global user groups: [NomadPHP] and [PHPWomen]. [NomadPHP] offers twice monthly
-online user group meetings with presentations by some of the top speakers in the PHP community.
-[PHPWomen] is a non-exclusive user group originally targeted towards the women in the PHP world. Membership is open to
-everyone who supports a more diverse community. PHPWomen provide a network for support, mentorship and education, and
-generally promote the creating of a "female friendly" and professional atmosphere.
-
-[Read about User Groups on the PHP Wiki][php-wiki]
-
-[google]: https://www.google.com/search?q=php+user+group+near+me
-[meetup]: http://www.meetup.com/find/
-[php-ug]: http://php.ug/
-[NomadPHP]: https://nomadphp.com/
-[PHPWomen]: http://phpwomen.org/
-[php-wiki]: https://wiki.php.net/usergroups
-[php-uglist]: http://php.net/ug.php
+[php-so]: https://stackoverflow.com/questions/tagged/php
+[php-calendar]: https://secure.php.net/cal.php
 
 
 ## PHP Conferences {#conferences_title}
@@ -52,7 +26,30 @@ industry leaders.
 [Find a PHP Conference][php-conf]
 
 
-[php-conf]: http://php.net/conferences/index.php
+[php-conf]: https://secure.php.net/conferences/index.php
+
+
+## PHP User Groups {#user_groups_title}
+
+If you live in a larger city, odds are there's a PHP user group nearby. You can easily find your local PUG at
+[PHP.ug][php-ug]. Alternate sources might be [Meetup.com][meetup] or a search for ```php user group near me```
+using your favorite search engine (i.e. [Google][google]). If you live in a smaller town, there may not be a
+local PUG; if that's the case, start one!
+
+Special mention should be made of two global user groups: [NomadPHP] and [PHPWomen]. [NomadPHP] offers twice monthly
+online user group meetings with presentations by some of the top speakers in the PHP community.
+[PHPWomen] is a non-exclusive user group originally targeted towards the women in the PHP world. Membership is open to
+everyone who supports a more diverse community. PHPWomen provide a network for support, mentorship and education, and
+generally promote the creating of a "female friendly" and professional atmosphere.
+
+[Read about User Groups on the PHP Wiki][php-wiki]
+
+[google]: https://www.google.com/search?q=php+user+group+near+me
+[meetup]: https://www.meetup.com/find/
+[php-ug]: https://php.ug/
+[NomadPHP]: https://nomadphp.com/
+[PHPWomen]: https://twitter.com/PHPWomen
+[php-wiki]: https://wiki.php.net/usergroups
 
 
 ## ElePHPants {#elephpants_title}
@@ -62,6 +59,6 @@ industry leaders.
 [Interview with Vincent Pontier][vincent-pontier-interview]
 
 
-[elephpant]: http://php.net/elephpant.php
-[vincent-pontier-interview]: http://7php.com/elephpant/
+[elephpant]: https://secure.php.net/elephpant.php
+[vincent-pontier-interview]: https://7php.com/elephpant/
 [vincent-pontier]: http://www.elroubio.net/

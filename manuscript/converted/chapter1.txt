@@ -1,116 +1,12 @@
 
 
-# Getting Started {#getting_started_title}
-
-
-
-## Use the Current Stable Version (7.0) {#use_the_current_stable_version_title}
-
-If you are getting started with PHP, start with the current stable release of [PHP 7.0][php-release]. PHP 7.0 is very
-new, and adds many amazing [new features](#language_highlights) over the older 5.x versions. The engine has been largely re-written, and PHP is now even quicker than older versions.
-
-Most commonly in the near future you will find PHP 5.x being used, and the latest 5.x version is 5.6. This is not a bad option, but you should try to upgrade to the latest stable quickly - PHP 5.6 [will not receive security updates beyond 2018](http://php.net/supported-versions.php).  Upgrading is really quite easy, as there are not many [backwards compatibility breaks][php70-bc]. If you are not sure which version a function or feature is in, you can check the PHP documentation on the [php.net][php-docs] website.
-
-[php-release]: http://php.net/downloads.php
-[php-docs]: http://php.net/manual/
-[php70-bc]: http://php.net/manual/migration70.incompatible.php
-
-
-## Built-in web server {#builtin_web_server_title}
-
-With PHP 5.4 or newer, you can start learning PHP without installing and configuring a full-fledged web server.
-To start the server, run the following command from your terminal in your project's web root:
-
-
-{lang="console"}
-~~~~~~~~
-> php -S localhost:8000
-~~~~~~~~
-
-* [Learn about the built-in, command line web server][cli-server]
-
-
-[cli-server]: http://php.net/features.commandline.webserver
-
-
-## Mac Setup {#mac_setup_title}
-
-OS X comes prepackaged with PHP but it is normally a little behind the latest stable. Mavericks has 5.4.17,
-Yosemite 5.5.9, El Capitan 5.5.29 and Sierra 5.6.24, but with PHP 7.0 out that is often not good enough.
-
-There are multiple ways to install PHP on OS X.
-
-### Install PHP via Homebrew
-
-[Homebrew] is a powerful package manager for OS X, which can help you install PHP and various extensions easily.
-[Homebrew PHP] is a repository that contains PHP-related "formulae" for Homebrew, and will let you install PHP.
-
-At this point, you can install `php53`, `php54`, `php55`, `php56` or `php70` using the `brew install` command, and switch
-between them by modifying your `PATH` variable. Alternatively you can use [brew-php-switcher][brew-php-switcher] which will switch automatically for you.
-
-### Install PHP via Macports
-
-The [MacPorts] Project is an open-source community initiative to design an
-easy-to-use system for compiling, installing, and upgrading either
-command-line, X11 or Aqua based open-source software on the OS X operating
-system.
-
-MacPorts supports pre-compiled binaries, so you don't need to recompile every
-dependency from the source tarball files, it saves your life if you don't
-have any package installed on your system.
-
-At this point, you can install `php54`, `php55`, `php56` or `php70` using the `port install` command, for example:
-
-    sudo port install php56
-    sudo port install php70
-
-And you can run `select` command to switch your active PHP:
-
-    sudo port select --set php php70
-
-### Install PHP via phpbrew
-
-[phpbrew] is a tool for installing and managing multiple PHP versions. This can be really useful if two different
-applications/projects require different versions of PHP, and you are not using virtual machines.
-
-### Install PHP via Liip's binary installer
-
-Another popular option is [php-osx.liip.ch] which provides one liner installation methods for versions 5.3 through 7.0.
-It doesn't overwrite the PHP binaries installed by Apple, but installs everything in a separate location (/usr/local/php5).
-
-### Compile from Source
-
-Another option that gives you control over the version of PHP you install, is to [compile it yourself][mac-compile].
-In that case be sure to have installed either [Xcode][xcode-gcc-substitution] or Apple's substitute
-["Command Line Tools for XCode"] downloadable from Apple's Mac Developer Center.
-
-### All-in-One Installers
-
-The solutions listed above mainly handle PHP itself, and do not supply things like Apache, Nginx or a SQL server.
-"All-in-one" solutions such as [MAMP][mamp-downloads] and [XAMPP][xampp] will install these other bits of software for
-you and tie them all together, but ease of setup comes with a trade-off of flexibility.
-
-
-[Homebrew]: http://brew.sh/
-[Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
-[MacPorts]: https://www.macports.org/install.php
-[phpbrew]: https://github.com/phpbrew/phpbrew
-[php-osx.liip.ch]: http://php-osx.liip.ch/
-[mac-compile]: http://php.net/install.macosx.compile
-[xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
-["Command Line Tools for XCode"]: https://developer.apple.com/downloads
-[mamp-downloads]: http://www.mamp.info/en/downloads/
-[xampp]: http://www.apachefriends.org/en/xampp.html
-[brew-php-switcher]: https://github.com/philcook/brew-php-switcher
-
-
 ## Windows Setup {#windows_setup_title}
 
 You can download the binaries from [windows.php.net/download][php-downloads]. After the extraction of PHP, it is recommended to set the [PATH][windows-path] to the root of your PHP folder (where php.exe is located) so you can execute PHP from anywhere.
 
 For learning and local development, you can use the built in webserver with PHP 5.4+ so you don't need to worry about
 configuring it. If you would like an "all-in-one" which includes a full-blown webserver and MySQL too then tools such
-as the [Web Platform Installer][wpi], [XAMPP][xampp], [EasyPHP][easyphp], [OpenServer][openserver] and [WAMP][wamp] will
+as the [XAMPP][xampp], [EasyPHP][easyphp], [OpenServer][openserver] and [WAMP][wamp] will
 help get a Windows development environment up and running fast. That said, these tools will be a little different from
 production so be careful of environment differences if you are working on Windows and deploying to Linux.
 
@@ -131,6 +27,135 @@ Chris Tankersley has a very helpful blog post on what tools he uses to do [PHP d
 [php-downloads]: http://windows.php.net/download/
 [php-iis]: http://php.iis.net/
 [windows-path]: http://www.windows-commandline.com/set-path-command-line/
-[windows-tools]: http://ctankersley.com/2015/07/01/developing-on-windows/
-[wpi]: http://www.microsoft.com/web/downloads/platform.aspx
+[windows-tools]: http://ctankersley.com/2016/11/13/developing-on-windows-2016/
 [xampp]: http://www.apachefriends.org/en/xampp.html
+
+
+## Mac Setup {#mac_setup_title}
+
+macOS comes prepackaged with PHP but it is normally a little behind the latest stable release. There are multiple ways to install the latest PHP version on macOS.
+
+### Install PHP via Homebrew
+
+[Homebrew] is a package manager for macOS that helps you easily install PHP and various extensions. The Homebrew core repository provides "formulae" for PHP 5.6, 7.0, 7.1, 7.2, 7.3, 7.4, 8.0 and PHP 8.1. Install the latest version with this command:
+
+```
+brew install php@8.1
+```
+
+You can switch between Homebrew PHP versions by modifying your `PATH` variable. Alternatively, you can use [brew-php-switcher][brew-php-switcher] to switch PHP versions automatically.
+
+You can also switch between PHP versions manually by unlinking and linking the wanted version:
+
+```
+brew unlink php
+brew link --overwrite php@8.0
+```
+
+```
+brew unlink php
+brew link --overwrite php@8.1
+```
+
+### Install PHP via Macports
+
+The [MacPorts] Project is an open-source community initiative to design an
+easy-to-use system for compiling, installing, and upgrading either
+command-line, X11 or Aqua based open-source software on the OS X operating
+system.
+
+MacPorts supports pre-compiled binaries, so you don't need to recompile every
+dependency from the source tarball files, it saves your life if you don't
+have any package installed on your system.
+
+At this point, you can install `php54`, `php55`, `php56`, `php70`, `php71`, `php72`, `php73`, `php74`, `php80` or `php81` using the `port install` command, for example:
+
+    sudo port install php74
+    sudo port install php81
+
+And you can run `select` command to switch your active PHP:
+
+    sudo port select --set php php81
+
+### Install PHP via phpbrew
+
+[phpbrew] is a tool for installing and managing multiple PHP versions. This can be really useful if two different
+applications/projects require different versions of PHP, and you are not using virtual machines.
+
+### Install PHP via Liip's binary installer
+
+Another popular option is [php-osx.liip.ch] which provides one liner installation methods for versions 5.3 through 7.3.
+It doesn't overwrite the PHP binaries installed by Apple, but installs everything in a separate location (/usr/local/php5).
+
+### Compile from Source
+
+Another option that gives you control over the version of PHP you install, is to [compile it yourself][mac-compile].
+In that case be sure to have installed either [Xcode][xcode-gcc-substitution] or Apple's substitute
+["Command Line Tools for XCode"] downloadable from Apple's Mac Developer Center.
+
+### All-in-One Installers
+
+The solutions listed above mainly handle PHP itself, and do not supply things like [Apache][apache], [Nginx][nginx] or a SQL server.
+"All-in-one" solutions such as [MAMP][mamp-downloads] and [XAMPP][xampp] will install these other bits of software for
+you and tie them all together, but ease of setup comes with a trade-off of flexibility.
+
+[Homebrew]: https://brew.sh/
+[Homebrew PHP]: https://github.com/Homebrew/homebrew-php#installation
+[MacPorts]: https://www.macports.org/install.php
+[phpbrew]: https://github.com/phpbrew/phpbrew
+[php-osx.liip.ch]: https://php-osx.liip.ch/
+[mac-compile]: https://secure.php.net/install.macosx.compile
+[xcode-gcc-substitution]: https://github.com/kennethreitz/osx-gcc-installer
+["Command Line Tools for XCode"]: https://developer.apple.com/downloads
+[apache]: https://httpd.apache.org/
+[nginx]: https://www.nginx.com/
+[mamp-downloads]: https://www.mamp.info/en/downloads/
+[xampp]: https://www.apachefriends.org/index.html
+[brew-php-switcher]: https://github.com/philcook/brew-php-switcher
+
+
+## Common Directory structure {#common_directory_structure_title}
+
+A common question among those starting out with writing programs for the web is, "where do I put my stuff?" Over the years, this answer has consistently been "where the `DocumentRoot` is." Although this answer is not complete, it's a great place to start.
+
+For security reasons, configuration files should not be accessible by a site's visitors; therefore, public scripts are kept in a public directory and private configurations and data are kept outside of that directory.
+
+For each team, CMS, or framework one works in, a standard directory structure is used by each of those entities. However, if one is starting a project alone, knowing which filesystem structure to use can be daunting.
+
+[Paul M. Jones] has done some fantastic research into common practices of tens of thousands of github projects in the realm of PHP. He has compiled a standard file and directory structure, the [Standard PHP Package Skeleton], based on this research. In this directory structure, `DocumentRoot` should point to `public/`, unit tests should be in the `tests/` directory, and third party libraries, as installed by [composer], belong in the `vendor/` directory. For other files and directories, abiding by the [Standard PHP Package Skeleton] will make the most sense to contributors of a project.
+
+[Paul M. Jones]: http://paul-m-jones.com/
+[Standard PHP Package Skeleton]: https://github.com/php-pds/skeleton
+[Composer]: /#composer_and_packagist
+
+
+# Getting Started {#getting_started_title}
+
+
+
+## Use the Current Stable Version (8.1) {#use_the_current_stable_version_title}
+
+If you are getting started with PHP, start with the current stable release of [PHP 8.1][php-release]. PHP 8.x adds many [new features](#language_highlights) over the older 7.x and 5.x versions. The engine has been largely re-written, and PHP is now even quicker than older versions. PHP 8 is a major update of the language and contains many new features and optimizations.
+
+You should try to upgrade to the latest stable version quickly - PHP 5.6 [is already End of Life](http://php.net/supported-versions.php). Upgrading is easy, as there are not many [backwards compatibility breaks][php-bc]. If you are not sure which version a function or feature is in, you can check the PHP documentation on the [php.net][php-docs] website.
+
+[php-release]: http://php.net/downloads.php
+[php-docs]: http://php.net/manual/
+[php-bc]: http://php.net/manual/migration81.incompatible.php
+
+
+## Built-in web server {#builtin_web_server_title}
+
+With PHP 5.4 or newer, you can start learning PHP without installing and configuring a full-fledged web server.
+To start the server, run the following command from your terminal in your project's web root:
+
+
+{lang="console"}
+~~~~~~~~
+> php -S localhost:8000
+~~~~~~~~
+
+* [Learn about the built-in, command line web server][cli-server]
+
+
+[cli-server]: http://php.net/features.commandline.webserver
