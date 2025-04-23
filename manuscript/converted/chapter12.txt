@@ -23,9 +23,9 @@ frameworks and open source apps like WordPress. Unfortunately, Apache uses more 
 cannot handle as many visitors at the same time.
 
 Apache has several possible configurations for running PHP. The most common and easiest to setup is the [prefork MPM]
-with mod_php5. While it isn't the most memory efficient, it is the simplest to get working and to use. This is probably
+with `mod_php`. While it isn't the most memory efficient, it is the simplest to get working and to use. This is probably
 the best choice if you don't want to dig too deeply into the server administration aspects. Note that if you use
-mod_php5 you MUST use the prefork MPM.
+`mod_php` you MUST use the prefork MPM.
 
 Alternatively, if you want to squeeze more performance and stability out of Apache then you can take advantage of the
 same FPM system as nginx and run the [worker MPM] or [event MPM] with mod_fastcgi or mod_fcgid. This configuration will
@@ -42,7 +42,7 @@ If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get grea
 
 
 [nginx]: https://nginx.org/
-[phpfpm]: https://secure.php.net/install.fpm
+[phpfpm]: https://www.php.net/install.fpm
 [secure-nginx-phpfpm]: https://nealpoole.com/blog/2011/04/setting-up-php-fastcgi-and-nginx-dont-trust-the-tutorials-check-your-configuration/
 [apache-modules]: https://httpd.apache.org/docs/2.4/mod/
 [prefork MPM]: https://httpd.apache.org/docs/2.4/mod/prefork.html
@@ -50,8 +50,8 @@ If you are running Apache 2.4 or later, you can use [mod_proxy_fcgi] to get grea
 [event MPM]: https://httpd.apache.org/docs/2.4/mod/event.html
 [apache]: https://httpd.apache.org/
 [apache-MPM]: https://httpd.apache.org/docs/2.4/mod/mpm_common.html
-[mod_fastcgi]: https://blogs.oracle.com/opal/entry/php_fpm_fastcgi_process_manager
-[mod_fcgid]: hhttps://httpd.apache.org/mod_fcgid/
+[mod_fastcgi]: https://blogs.oracle.com/opal/post/php-fpm-fastcgi-process-manager-with-apache-2
+[mod_fcgid]: https://httpd.apache.org/mod_fcgid/
 [mod_proxy_fcgi]: https://httpd.apache.org/docs/current/mod/mod_proxy_fcgi.html
 [tutorial-mod_proxy_fcgi]: https://serversforhackers.com/video/apache-and-php-fpm
 
@@ -64,7 +64,7 @@ this is that it has become a cheap commodity. The downside is that you never kno
 neighboring tenants are going to create; loading down the server or opening up security holes are the main concerns. If
 your project's budget can afford to avoid shared servers, you should.
 
-To make sure your shared servers are offering the latest versions of PHP, check out [PHP Versions](http://phpversions.info/shared-hosting/).
+Make sure your shared servers are offering the latest versions of PHP.
 
 
 # Servers and Deployment {#servers_and_deployment_title}
@@ -109,9 +109,7 @@ There are many open source tools available to help you with build automation and
 
 [Ansistrano] is a couple of Ansible roles to easily manage the deployment process (deploy and rollback) for scripting applications such as PHP, Python and Ruby. It's an Ansible port for [Capistrano]. It's been used by quite a lot of PHP companies already.
 
-[Rocketeer] gets its inspiration and philosophy from the Laravel framework. Its goal is to be fast, elegant and easy to use with smart defaults. It features multiple servers, multiple stages, atomic deploys and deployment can be performed in parallel. Everything in the tool can be hot swapped or extended, and everything is written in PHP.
-
-[Deployer] is a deployment tool written in PHP. It's simple and functional. Features include running tasks in parallel, atomic deployment and keeping consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii are available. Younes Rafie's article  [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
+[Deployer] is a deployment tool written in PHP. It's simple and functional. Features include running tasks in parallel, atomic deployment and keeping consistency between servers. Recipes of common tasks for Symfony, Laravel, Zend Framework and Yii are available. Younes Rafie's article [Easy Deployment of PHP Applications with Deployer][phpdeploy_deployer] is a great tutorial for deploying your application with the tool.
 
 [Magallanes] is another tool written in PHP with simple configuration done in YAML files. It has support for multiple servers and environments, atomic deployment, and has some built in tasks that you can leverage for common tools and frameworks.
 
@@ -126,7 +124,7 @@ Managing and configuring servers can be a daunting task when faced with many ser
 
 [Ansible] is a tool that manages your infrastructure through YAML files. It's simple to get started with and can manage complex and large scale applications. There is an API for managing cloud instances and it can manage them through a dynamic inventory using certain tools.
 
-[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update itself if necessary. In the master-less mode you can push changes to your nodes.
+[Puppet] is a tool that has its own language and file types for managing servers and configurations. It can be used in a master/client setup or it can be used in a "master-less" mode. In the master/client mode the clients will poll the central master(s) for new configuration on set intervals and update themselves if necessary. In the master-less mode you can push changes to your nodes.
 
 [Chef] is a powerful Ruby based system integration framework that you can build your whole server environment or virtual boxes with. It integrates well with Amazon Web Services through their service called OpsWorks.
 
@@ -149,9 +147,9 @@ Managing and configuring servers can be a daunting task when faced with many ser
 *-- Martin Fowler*
 
 There are different ways to implement continuous integration for PHP. [Travis CI] has done a great job of
-making continuous integration a reality even for small projects. Travis CI is a hosted continuous integration service
-for the open source community. It is integrated with GitHub and offers first class support for many languages including
-PHP.
+making continuous integration a reality even for small projects. Travis CI is a hosted continuous integration service.
+It can be integrated with GitHub and offers support for many languages including PHP.
+GitHub has continuous integration workflows with [GitHub Actions][github_actions].
 
 #### Further reading:
 
@@ -163,21 +161,20 @@ PHP.
 [buildautomation]: https://wikipedia.org/wiki/Build_automation
 [Phing]: https://www.phing.info/
 [Apache Ant]: https://ant.apache.org/
-[Capistrano]: http://capistranorb.com/
+[Capistrano]: https://capistranorb.com/
 [Ansistrano]: https://ansistrano.com
 [phpdeploy_deployer]: https://www.sitepoint.com/deploying-php-applications-with-deployer/
 [Chef]: https://www.chef.io/
-[chef_vagrant_and_ec2]: http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
-[Chef_cookbook]: https://github.com/chef-cookbooks/php
-[Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyPnZA9D1MbVqldGuOWqbumZ
+[chef_vagrant_and_ec2]: https://web.archive.org/web/20190307220000/http://www.jasongrimes.org/2012/06/managing-lamp-environments-with-chef-vagrant-and-ec2-1-of-3/
+[Chef_cookbook]: https://github.com/sous-chefs/php
+[Chef_tutorial]: https://www.youtube.com/playlist?list=PL11cZfNdwNyNYcpntVe6js-prb80LBZuc
 [apache_ant_tutorial]: https://code.tutsplus.com/tutorials/automate-your-projects-with-apache-ant--net-18595
-[Travis CI]: https://travis-ci.org/
+[Travis CI]: https://www.travis-ci.com/
 [Jenkins]: https://jenkins.io/
 [PHPCI]: https://github.com/dancryer/phpci
 [PHP Censor]: https://github.com/php-censor/php-censor
 [Teamcity]: https://www.jetbrains.com/teamcity/
 [Deployer]: https://deployer.org/
-[Rocketeer]: http://rocketeer.autopergamene.eu/
 [Magallanes]: https://www.magephp.com/
 [deploying_php_applications]: https://deployingphpapplications.com/
 [Ansible]: https://www.ansible.com/
@@ -185,3 +182,4 @@ PHP.
 [ansible_for_devops]: https://leanpub.com/ansible-for-devops
 [ansible_for_aws]: https://leanpub.com/ansible-for-aws
 [an_ansible_tutorial]: https://serversforhackers.com/an-ansible-tutorial
+[github_actions]: https://docs.github.com/en/actions

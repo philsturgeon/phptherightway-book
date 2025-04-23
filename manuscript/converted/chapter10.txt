@@ -41,7 +41,7 @@ When you use bound parameters with [PDO](#databases), it will sanitize the input
 
 Sometimes it is required to allow some safe HTML tags in the input when including it in the HTML page. This is very
 hard to do and many avoid it by using other more restricted formatting like Markdown or BBCode, although whitelisting
-libraries like [HTML Purifier][html-purifier] exists for this reason.
+libraries like [HTML Purifier][html-purifier] exist for this reason.
 
 [See Sanitization Filters][2]
 
@@ -49,7 +49,7 @@ libraries like [HTML Purifier][html-purifier] exists for this reason.
 
 It is dangerous to `unserialize()` data from users or other untrusted sources.  Doing so can allow malicious users to instantiate objects (with user-defined properties) whose destructors will be executed, **even if the objects themselves aren't used**.  You should therefore avoid unserializing untrusted data.
 
-If you absolutely must unserialize data from untrusted sources, use PHP 7's [`allowed_classes`][unserialize] option to restrict which object types are allowed to be unserialized.
+Use a safe, standard data interchange format such as JSON (via [`json_decode`][json_decode] and [`json_encode`][json_encode]) if you need to pass serialized data to the user.
 
 ### Validation
 
@@ -59,14 +59,15 @@ phone number, or age when processing a registration submission.
 [See Validation Filters][3]
 
 
-[1]: https://secure.php.net/book.filter
-[2]: https://secure.php.net/filter.filters.sanitize
-[3]: https://secure.php.net/filter.filters.validate
-[4]: https://secure.php.net/function.filter-var
-[5]: https://secure.php.net/function.filter-input
-[6]: https://secure.php.net/security.filesystem.nullbytes
+[1]: https://www.php.net/book.filter
+[2]: https://www.php.net/filter.filters.sanitize
+[3]: https://www.php.net/filter.filters.validate
+[4]: https://www.php.net/function.filter-var
+[5]: https://www.php.net/function.filter-input
+[6]: https://www.php.net/security.filesystem.nullbytes
 [html-purifier]: http://htmlpurifier.org/
-[unserialize]: https://secure.php.net/manual/function.unserialize.php
+[json_decode]: https://www.php.net/manual/function.json-decode.php
+[json_encode]: https://www.php.net/manual/function.json-encode.php
 
 
 ## Web Application Security {#web_application_security_title}
@@ -102,11 +103,10 @@ methods to protect yourself against them. This is a must read for the security-c
 [2]: https://www.owasp.org/index.php/Guide_Table_of_Contents
 [3]: https://phpsecurity.readthedocs.io/en/latest/index.html
 [4]: https://paragonie.com/blog/2015/08/gentle-introduction-application-security
-[5]: http://searchsecurity.techtarget.com/definition/address-space-layout-randomization-ASLR
+[5]: https://www.techtarget.com/searchsecurity/definition/address-space-layout-randomization-ASLR
 [6]: https://paragonie.com/blog/2016/01/on-design-and-implementation-stealth-backdoor-for-web-applications
 [7]: https://paragonie.com/blog/2015/05/using-encryption-and-authentication-correctly
-[8]: http://blog.ircmaxell.com/2014/11/its-all-about-time.html
-
+[8]: https://blog.ircmaxell.com/2014/11/its-all-about-time.html
 
 
 ## Error Reporting {#error_reporting_title}
@@ -131,7 +131,7 @@ log_errors = On
 
 > Passing in the value `-1` will show every possible error, even when new levels and constants are added in future PHP
 > versions. The `E_ALL` constant also behaves this way as of PHP 5.4. -
-> [php.net](https://secure.php.net/function.error-reporting)
+> [php.net](https://www.php.net/function.error-reporting)
 
 The `E_STRICT` error level constant was introduced in 5.3.0 and is not part of `E_ALL`, however it became part of
 `E_ALL` in 5.4.0. What does this mean? In terms of reporting every possible error in version 5.3 it means you must
@@ -159,10 +159,10 @@ log_errors = On
 With these settings in production, errors will still be logged to the error logs for the web server, but will not be
 shown to the user. For more information on these settings, see the PHP manual:
 
-* [error_reporting](https://secure.php.net/errorfunc.configuration#ini.error-reporting)
-* [display_errors](https://secure.php.net/errorfunc.configuration#ini.display-errors)
-* [display_startup_errors](https://secure.php.net/errorfunc.configuration#ini.display-startup-errors)
-* [log_errors](https://secure.php.net/errorfunc.configuration#ini.log-errors)
+* [error_reporting](https://www.php.net/errorfunc.configuration#ini.error-reporting)
+* [display_errors](https://www.php.net/errorfunc.configuration#ini.display-errors)
+* [display_startup_errors](https://www.php.net/errorfunc.configuration#ini.display-startup-errors)
+* [log_errors](https://www.php.net/errorfunc.configuration#ini.log-errors)
 
 
 ## Configuration Files {#configuration_files_title}
@@ -192,8 +192,6 @@ For example: `$_GET['foo']` would be available via `$foo`, which can override va
 
 If you are using PHP < 5.4.0 __make sure__ that `register_globals` is __off__.
 
-* [Register_globals in the PHP manual](https://secure.php.net/security.globals)
-
 
 # Security {#security_title}
 
@@ -217,7 +215,7 @@ third-party, all user accounts are now compromised.
 Unlike hashing, encryption is reversible (provided you have the key). Encryption is useful in other areas, but is a poor
 strategy for securely storing passwords.
 
-Passwords should also be individually [_salted_][5] by adding a random string to each password before hashing. This prevents dictionary attacks and the use of "rainbow tables" (a reverse list of crytographic hashes for common passwords.)
+Passwords should also be individually [_salted_][5] by adding a random string to each password before hashing. This prevents dictionary attacks and the use of "rainbow tables" (a reverse list of cryptographic hashes for common passwords.)
 
 Hashing and salting are vital as often users use the same password for multiple services and password quality can be poor.
 
@@ -265,7 +263,7 @@ if (password_verify('bad-password', $passwordHash)) {
 * [PHP `password_hash()` RFC] [4]
 
 
-[1]: https://secure.php.net/function.password-hash
+[1]: https://www.php.net/function.password-hash
 [2]: https://github.com/ircmaxell/password_compat
 [3]: https://wikipedia.org/wiki/Cryptographic_hash_function
 [4]: https://wiki.php.net/rfc/password_hash

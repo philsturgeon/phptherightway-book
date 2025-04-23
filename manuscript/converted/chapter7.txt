@@ -74,11 +74,8 @@ include 'views/foo-list.php';
 <?php
 class FooModel
 {
-    protected $db;
-
-    public function __construct(PDO $db)
+    public function __construct(protected PDO $db)
     {
-        $this->db = $db;
     }
 
     public function getAllFoos() {
@@ -112,15 +109,15 @@ The [mysql] extension for PHP is incredibly old and has been superseded by two o
 - [mysqli]
 - [pdo]
 
-Not only did development stop long ago on [mysql], but it was [deprecated as of PHP 5.5.0]
-[mysql_deprecated], and **has been [officially removed in PHP 7.0][mysql_removed]**.
+Not only did development stop long ago on [mysql], but it
+**has been [officially removed in PHP 7.0][mysql_removed]**.
 
 To save digging into your `php.ini` settings to see which module you are using, one option is to search for `mysql_*`
 in your editor of choice. If any functions such as `mysql_connect()` and `mysql_query()` show up, then `mysql` is
 in use.
 
-Even if you are not using PHP 7.x yet, failing to consider this upgrade as soon as possible will lead to greater
-hardship when the PHP 7.x upgrade does come about. The best option is to replace mysql usage with [mysqli] or [PDO] in
+Even if you are not using PHP 7.x or later yet, failing to consider this upgrade as soon as possible will lead to greater
+hardship when the PHP upgrade does come about. The best option is to replace mysql usage with [mysqli] or [PDO] in
 your applications within your own development schedules so you won't be rushed later on.
 
 **If you are upgrading from [mysql] to [mysqli], beware lazy upgrade guides that suggest you can simply find and replace `mysql_*` with `mysqli_*`. Not only is that a gross oversimplification, it misses out on the advantages that mysqli provides, such as parameter binding, which is also offered in [PDO][pdo].**
@@ -128,12 +125,11 @@ your applications within your own development schedules so you won't be rushed l
 * [MySQLi Prepared Statements][mysqli_prepared_statements]
 * [PHP: Choosing an API for MySQL][mysql_api]
 
-[mysql]: https://secure.php.net/mysqli
-[mysql_deprecated]: https://secure.php.net/migration55.deprecated
-[mysql_removed]: https://secure.php.net/manual/migration70.removed-exts-sapis.php
-[mysqli]: https://secure.php.net/mysqli
-[pdo]: https://secure.php.net/pdo
-[mysql_api]: https://secure.php.net/mysqlinfo.api.choosing
+[mysql]: https://www.php.net/mysqli
+[mysql_removed]: https://www.php.net/manual/migration70.removed-exts-sapis.php
+[mysqli]: https://www.php.net/mysqli
+[pdo]: https://www.php.net/pdo
+[mysql_api]: https://www.php.net/mysqlinfo.api.choosing
 [mysqli_prepared_statements]: https://websitebeaver.com/prepared-statements-in-php-mysqli-to-prevent-sql-injection
 
 
@@ -199,7 +195,7 @@ introduced to the database preventing potential SQL injection attacks.
 
 For writes, such as INSERT or UPDATE, it's especially critical to still [filter your data](#data_filtering) first and sanitize it for other things (removal of HTML tags, JavaScript, etc).  PDO will only sanitize it for SQL, not for your application.
 
-* [Learn about PDO]
+* [Learn about PDO][pdo]
 
 You should also be aware that database connections use up resources and it was not unheard-of to have resources
 exhausted if connections were not implicitly closed, however this was more common in other languages. Using PDO you can
@@ -210,10 +206,9 @@ unless of course you are using persistent connections.
 * [Learn about PDO connections]
 
 
-[pdo]: https://secure.php.net/pdo
-[SQL Injection]: http://wiki.hashphp.org/Validation
-[Learn about PDO]: https://secure.php.net/book.pdo
-[Learn about PDO connections]: https://secure.php.net/pdo.connections
+[pdo]: https://www.php.net/pdo
+[SQL Injection]: https://web.archive.org/web/20210413233627/http://wiki.hashphp.org/Validation
+[Learn about PDO connections]: https://www.php.net/pdo.connections
 
 
 ## Abstraction Layers {#databases_abstraction_layers_title}
@@ -230,16 +225,18 @@ installed in any application you like:
 * [Atlas][5]
 * [Aura SQL][6]
 * [Doctrine2 DBAL][2]
+* [Medoo][8]
 * [Propel][7]
-* [Zend-db][4]
+* [laminas-db][4]
 
 
-[1]: https://secure.php.net/book.pdo
+[1]: https://www.php.net/book.pdo
 [2]: https://www.doctrine-project.org/projects/dbal.html
-[4]: https://packages.zendframework.com/docs/latest/manual/en/index.html#zendframework/zend-db
+[4]: https://docs.laminas.dev/laminas-db/
 [5]: https://atlasphp.io
 [6]: https://github.com/auraphp/Aura.Sql
-[7]: http://propelorm.org/
+[7]: https://propelorm.org/
+[8]: https://medoo.in/
 [psr0]: https://www.php-fig.org/psr/psr-0/
 [psr4]: https://www.php-fig.org/psr/psr-4/
 
@@ -255,6 +252,6 @@ MySQL and a little bit of MSSQL, or you need to connect to an Oracle database, t
 same drivers. You'll need to learn a brand new API for each database &mdash; and that can get silly.
 
 
-[mysqli]: https://secure.php.net/mysqli
-[pgsql]: https://secure.php.net/pgsql
-[mssql]: https://secure.php.net/mssql
+[mysqli]: https://www.php.net/mysqli
+[pgsql]: https://www.php.net/pgsql
+[mssql]: https://www.php.net/mssql

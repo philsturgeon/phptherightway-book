@@ -9,23 +9,24 @@ book to be added, send a PR and it will be reviewed for relevancy.
 
 ### Free Books
 
-* [PHP Pandas](http://daylerees.com/php-pandas/) - Aims to teach everyone how to be a web developer.
+* [PHP Pandas](https://daylerees.com/php-pandas/) - Aims to teach everyone how to be a web developer.
 * [PHP The Right Way](https://leanpub.com/phptherightway/) - This website is available as a book completely for free.
 * [Using Libsodium in PHP Projects](https://paragonie.com/book/pecl-libsodium) - Guide to using Libsodium PHP extension
 for modern, secure, and fast cryptography.
 
 ### Paid Books
 
+* [PHP & MySQL](https://phpandmysql.com/) - PHP book with excellent illustrations that covers all the fundamentals of PHP and MySQL with practical examples.
 * [Build APIs You Won't Hate](https://apisyouwonthate.com/) - Everyone and their dog wants an API,
 so you should probably learn how to build them.
-* [Modern PHP](http://shop.oreilly.com/product/0636920033868.do) - covers modern PHP features, best practices, testing, tuning, deployment and setting up a dev environment.
+* [Modern PHP](https://www.oreilly.com/library/view/modern-php/9781491905173/) - Covers modern PHP features, best practices, testing, tuning, deployment and setting up a dev environment.
 * [Building Secure PHP Apps](https://leanpub.com/buildingsecurephpapps) - Learn the security basics that a senior
-developer usually acquires over years of experience, all condensed down into one quick and easy handbook
+developer usually acquires over years of experience, all condensed down into one quick and easy handbook.
 * [Modernizing Legacy Applications In PHP](https://leanpub.com/mlaphp) - Get your code under control in a series of
-small, specific steps
+small, specific steps.
 * [Securing PHP: Core Concepts](https://leanpub.com/securingphp-coreconcepts) - A guide to some of the most common
-security terms and provides some examples of them in every day PHP
-* [Scaling PHP](http://www.scalingphpbook.com/) - Stop playing sysadmin and get back to coding
+security terms and provides some examples of them in every day PHP.
+* [Scaling PHP](https://www.scalingphpbook.com/) - Stop playing sysadmin and get back to coding.
 * [Signaling PHP](https://leanpub.com/signalingphp) - PCNLT signals are a great help when writing PHP scripts that
 run from the command line.
 * [Minimum Viable Tests](https://leanpub.com/minimumviabletests) - Long-time PHP testing evangelist Chris Hartjes goes over what he feels is the minimum you need to know to get started.
@@ -39,16 +40,16 @@ community members when you are first starting out. You can
 find an abbreviated list of PHP community members to get you started at:
 
 * <https://www.ogprogrammer.com/2017/06/28/how-to-get-connected-with-the-php-community/>
-* <https://twitter.com/CalEvans/lists/phpeople>
+* <https://x.com/CalEvans/lists/phpeople>
 
 
 ## Other Useful Resources {#other_resources_title}
 
 ### Cheatsheets
 
-* [PHP Cheatsheets](http://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various PHP versions.
-* [Modern PHP Cheatsheet](https://github.com/smknstd/modern-php-cheatsheet) documents modern (PHP 7.0+) idioms in a unified document.
-* [OWASP Security Cheatsheets](https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series) - provides a concise collection of high value information on specific application security topics. 
+* [PHP Cheatsheets](https://phpcheatsheets.com/) - for variable comparisons, arithmetics and variable testing in various PHP versions.
+* [Modern PHP Cheatsheet](https://github.com/smknstd/modern-php-cheatsheet) - documents modern (PHP 7.0+) idioms in a unified document.
+* [OWASP Security Cheatsheets](https://owasp.org/www-project-cheat-sheets/) - provides a concise collection of high value information on specific application security topics. 
 
 ### More best practices
 
@@ -60,7 +61,7 @@ find an abbreviated list of PHP community members to get you started at:
 You can subscribe to weekly newsletters to keep yourself informed on new libraries, latest news, events and general
 announcements, as well as additional resources being published every now and then:
 
-* [PHP Weekly](http://www.phpweekly.com)
+* [PHP Weekly](https://www.phpweekly.com)
 * [JavaScript Weekly](https://javascriptweekly.com/)
 * [Frontend Focus](https://frontendfoc.us/)
 * [Mobile Web Weekly](https://mobiledevweekly.com/)
@@ -75,6 +76,8 @@ There are also Weeklies on other platforms you might be interested in; here's [a
 ## Video Tutorials {#videos}
 
 ### YouTube Channels
+
+* [Learn PHP The Right Way Series](https://github.com/ggelashvili/learnphptherightway-outline)
 * [PHP Academy](https://www.youtube.com/user/phpacademy)
 * [The New Boston](https://www.youtube.com/user/thenewboston)
 * [Sherif Ramadan](https://www.youtube.com/user/businessgeek)
@@ -84,9 +87,10 @@ There are also Weeklies on other platforms you might be interested in; here's [a
 
 * [Standards and Best practices](https://teamtreehouse.com/library/php-standards-and-best-practices)
 * [PHP Training on Pluralsight](https://www.pluralsight.com/search?q=php)
-* [PHP Training on Lynda.com](https://www.lynda.com/search?q=php)
+* [PHP Training on LinkedIn.com](https://www.linkedin.com/learning/search?trk=lynda_redirect_learning&sortBy=RELEVANCE&softwareNames=PHP)
 * [PHP Training on Tutsplus](https://code.tutsplus.com/categories/php/courses)
 * [Laracasts](https://laracasts.com/)
+* [SymfonyCasts](https://symfonycasts.com/)
 
 
 ## Components {#components_title}
@@ -130,10 +134,10 @@ components best decoupled from the Laravel framework are listed above._
 [PEAR]: /#pear
 [Dependency Management]: /#dependency_management
 [FuelPHP Validation package]: https://github.com/fuelphp/validation
-[Aura]: http://auraphp.com/framework/
+[Aura]: https://auraphp.com/framework/
 [FuelPHP]: https://github.com/fuelphp
 [Hoa Project]: https://github.com/hoaproject
-[Symfony Components]: https://symfony.com/doc/current/components/index.html
+[Symfony Components]: https://symfony.com/components
 [The League of Extraordinary Packages]: https://thephpleague.com/
 [IoC Container]: https://github.com/illuminate/container
 [Eloquent ORM]: https://github.com/illuminate/database
@@ -149,24 +153,22 @@ components best decoupled from the Laravel framework are listed above._
 
 ## PHP PaaS Providers {#php_paas_providers_title}
 
-* [AppFog](https://www.ctl.io/appfog/)
 * [Amezmo](https://www.amezmo.com)
 * [AWS Elastic Beanstalk](https://aws.amazon.com/elasticbeanstalk/)
 * [Cloudways](https://www.cloudways.com/)
-* [Divio](https://www.divio.com/php/)
-* [Engine Yard Cloud](https://www.engineyard.com/features)
+* [DigitalOcean App Platform](https://www.digitalocean.com/products/app-platform)
+* [Divio](https://www.divio.com/)
+* [Engine Yard Cloud](https://www.engineyard.com/)
 * [fortrabbit](https://www.fortrabbit.com/)
 * [Google App Engine](https://cloud.google.com/appengine/docs/php/)
 * [Heroku](https://devcenter.heroku.com/categories/php-support)
-* [IBM Cloud](https://console.bluemix.net/docs/runtimes/php/getting-started.html#getting_started)
-* [Jelastic](https://jelastic.com/)
+* [IBM Cloud](https://cloud.ibm.com/docs/openwhisk?topic=openwhisk-prep#prep_php)
+* [Lumen](https://www.lumen.com/)
 * [Microsoft Azure](https://azure.microsoft.com/)
-* [Nanobox](https://nanobox.io/)
-* [Pivotal Web Services](https://run.pivotal.io/)
+* [Pivotal Web Services](https://network.pivotal.io/)
 * [Platform.sh](https://platform.sh/)
 * [Red Hat OpenShift](https://www.openshift.com/)
-
-To see which versions these PaaS hosts are running, head over to [PHP Versions](http://phpversions.info/paas-hosting/).
+* [Virtuozzo](https://www.virtuozzo.com/application-platform-partners/)
 
 
 # Resources {#resources_title}
@@ -197,5 +199,5 @@ frameworks can be used together to make a micro- or full-stack framework.
 
 ## From the Source {#from_the_source_title}
 
-* [PHP Website](https://secure.php.net/)
-* [PHP Documentation](https://secure.php.net/docs.php)
+* [PHP Website](https://www.php.net/)
+* [PHP Documentation](https://www.php.net/docs.php)
