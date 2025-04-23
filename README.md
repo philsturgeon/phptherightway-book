@@ -9,9 +9,7 @@ The website was created originally by [Josh Lockhart], and [Phil Sturgeon] later
 joined in to write a bunch of content, and help keep on top of pull requests. He
 also wrote this conversion script to turn phptherightway.com content into the
 [LeanPub book], which is available entirely for free, or an optional donation,
-100% of which goes to PHP Women. Josh and Phil get nothing.
-
-Josh approves of this book.
+100% of which goes to [Protect Earth](https://protect.earth/).
 
 ## How it works
 
@@ -30,10 +28,10 @@ This will populate - or override - the contents of `manuscript/`. The only real
 way to test if it worked is to shove it into LeanPub and run a preview, which is
 something Phil usually does as he's the one who created the LeanPub app.
 
-Give Phil a [poke on Twitter] if you think this book is due an update. Send a PR
+Give Phil a [poke on socials] if you think this book is due an update. Send a PR
 to this repo if you notice a bug in the conversion process.
 
 [Josh Lockhart]: http://www.joshlockhart.com/
-[Phil Sturgeon]: https://philsturgeon.uk/
+[Phil Sturgeon]: https://philsturgeon.com/
 [LeanPub book]: https://leanpub.com/phptherightway
-[poke on Twitter]: https://twitter.com/philsturgeon
+[poke on socials]: https://mastodon.green/@philsturgeon
